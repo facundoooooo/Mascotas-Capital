@@ -1,345 +1,508 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mascotas Capital | Municipalidad de Mendoza 🐾🦴</title>
+  
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- QRCode.js para generar códigos QR reales dinámicamente -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-  <!-- ============================================================
-       NAVBAR
-       ============================================================ -->
-  <nav class="navbar">
-    <div class="container nav-container">
-      <div class="brand">
-        <div class="brand-icon">🐾</div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fdf8f6',
+              100: '#fbe8e6',
+              500: '#ff6b4a',
+              600: '#e85532',
+              700: '#c44222',
+            },
+            softgreen: {
+              50: '#f4fbf7',
+              500: '#10b981',
+              600: '#059669'
+            }
+          },
+          fontFamily: {
+            fredoka: ['Fredoka', 'sans-serif'],
+            nunito: ['Nunito', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+    }
+    h1, h2, h3, .font-heading {
+      font-family: 'Fredoka', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-[#fcfbf9] text-slate-700 antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-orange-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 bg-gradient-to-tr from-brand-500 to-orange-400 rounded-2xl flex items-center justify-center text-white text-2xl shadow-md shadow-brand-500/20">
+          🐾
+        </div>
         <div>
-          <div class="brand-title">Mascotas Capital</div>
-          <div class="brand-subtitle">Red Comunitaria de Mendoza</div>
+          <span class="text-xl font-bold font-heading text-slate-800 tracking-tight block">Mascotas Capital</span>
+          <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider">Red Comunitaria de Mendoza</span>
         </div>
       </div>
-      <ul class="nav-links">
-        <li><a href="#puntos-adopcion">📍 Red de Adopción</a></li>
-        <li><a href="#perdidos">🔍 Perdidos & Encontrados</a></li>
-        <li><a href="#veterinaria">🚐 Turnos & Veterinarias</a></li>
-        <li><a href="#dni-pet" class="btn-header">Registrar Mi Mascota 🦴</a></li>
-      </ul>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center space-x-8 font-medium">
+        <a href="#puntos-adopcion" class="hover:text-brand-600 transition-colors">📍 Red de Adopción</a>
+        <a href="#perdidos" class="hover:text-brand-600 transition-colors">🔍 Perdidos & Encontrados</a>
+        <a href="#veterinaria" class="hover:text-brand-600 transition-colors">🚐 Turnos & Veterinarias</a>
+        <a href="#dni-pet" class="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
+          Registrar Mi Mascota 🦴
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden text-slate-700 text-2xl focus:outline-none">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3 font-medium">
+      <a href="#puntos-adopcion" class="block py-2 text-slate-700 hover:text-brand-600">📍 Red de Adopción</a>
+      <a href="#perdidos" class="block py-2 text-slate-700 hover:text-brand-600">🔍 Perdidos & Encontrados</a>
+      <a href="#veterinaria" class="block py-2 text-slate-700 hover:text-brand-600">🚐 Turnos & Veterinarias</a>
+      <a href="#dni-pet" class="block text-center bg-brand-500 text-white py-3 rounded-xl font-semibold shadow-md">Registrar Mi Mascota 🦴</a>
     </div>
   </nav>
 
-  <!-- ============================================================
-       HERO BANNER
-       ============================================================ -->
-  <header class="hero">
-    <div class="hero-bg-paws" style="top: 10%; left: 5%;">🐾</div>
-    <div class="hero-bg-paws" style="bottom: 15%; right: 10%;">🦴</div>
-    
-    <div class="container hero-content">
-      <div>
-        <span class="hero-badge">🦴 Red de Protección Animal</span>
-        <h1>Conectamos refugios, rescatistas y familias adoptantes</h1>
-        <p>Encontrá tu nuevo compañero a través de refugios independientes, agrupaciones de rescatistas y ferias de adopción de todo Mendoza.</p>
-        <div class="hero-actions">
-          <a href="#puntos-adopcion" class="btn btn-primary">Dónde Adoptar 🏠</a>
-          <a href="#veterinaria" class="btn btn-secondary">Turnos de Veterinaria 📅</a>
+  <!-- ==================== HERO BANNER ==================== -->
+  <header class="relative overflow-hidden bg-gradient-to-b from-brand-50/70 to-transparent py-16 lg:py-24">
+    <div class="absolute -top-10 -left-10 text-6xl opacity-20 pointer-events-none select-none">🐾</div>
+    <div class="absolute bottom-10 right-10 text-6xl opacity-20 pointer-events-none select-none">🦴</div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <span class="inline-flex items-center gap-2 bg-orange-100 text-brand-700 text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full">
+            <i class="fa-solid fa-shield-heart"></i> Red de Protección Animal
+          </span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            Conectamos refugios, rescatistas y familias adoptantes
+          </h1>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0">
+            Encontrá tu nuevo compañero a través de refugios independientes, agrupaciones de rescatistas y ferias de adopción de todo Mendoza.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#puntos-adopcion" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg shadow-brand-500/25 transition-all text-center">
+              Dónde Adoptar 🏠
+            </a>
+            <a href="#veterinaria" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold px-8 py-4 rounded-2xl transition-all text-center">
+              Turnos de Veterinaria 📅
+            </a>
+          </div>
         </div>
-      </div>
-      <div>
-        <div class="hero-card-preview">
-          <div style="font-size: 3.5rem; margin-bottom: 10px;">🐕</div>
-          <h3>¡Saca el DNI de tu Mascota!</h3>
-          <p style="font-size: 0.9rem; margin-top: 8px;">Obtené el registro digital con código QR para su identificación y seguimiento veterinario.</p>
+
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border border-orange-100 text-center max-w-sm w-full relative group hover:scale-[1.02] transition-transform">
+            <div class="absolute -top-4 -right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+              ¡Nuevo!
+            </div>
+            <div class="w-20 h-20 bg-brand-50 rounded-2xl mx-auto flex items-center justify-center text-4xl mb-4 text-brand-500 shadow-inner">
+              🐕
+            </div>
+            <h3 class="text-xl font-bold text-slate-800">¡Sacá el DNI de tu Mascota!</h3>
+            <p class="text-sm text-slate-600 mt-2">
+              Obtené el registro digital con código QR para su identificación y seguimiento veterinario inmediato.
+            </p>
+            <a href="#dni-pet" class="mt-6 inline-block w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 rounded-xl text-sm transition-colors">
+              Crear Credencial Gratuita ✨
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </header>
 
-  <main class="container">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 py-12">
 
-    <!-- ============================================================
-         1. RED DE ADOPCIÓN RESPONSABLE
-         ============================================================ -->
-    <section id="puntos-adopcion" class="section">
-      <div class="section-header">
-        <span class="section-tag">📍 Red Comunitaria y Proteccionistas</span>
-        <h2>Refugios y Agrupaciones de Adopción en Mendoza</h2>
-        <p>Conocé a los refugios independientes, protectoras y agrupaciones que trabajan día a día rescatando y cuidando animales.</p>
+    <!-- ==================== 1. RED DE ADOPCIÓN RESPONSABLE ==================== -->
+    <section id="puntos-adopcion" class="space-y-10">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-100 px-3 py-1 rounded-full">
+          📍 Red Comunitaria y Proteccionistas
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Refugios y Agrupaciones de Adopción en Mendoza</h2>
+        <p class="text-slate-600">Conocé a los refugios independientes, protectoras y agrupaciones que trabajan día a día rescatando y cuidando animales.</p>
       </div>
 
-      <div class="adoption-filters">
-        <button class="filter-btn active">Todos los Centros</button>
-        <button class="filter-btn">Refugios & ONGs 🏡</button>
-        <button class="filter-btn">Agrupaciones de Rescatistas 🐾</button>
-        <button class="filter-btn">Plataformas Comunitarias 💻</button>
+      <!-- Filtros Interactivos -->
+      <div id="filterButtons" class="flex flex-wrap items-center justify-center gap-2">
+        <button onclick="filtrarAdopciones('todos', this)" class="filter-btn active bg-brand-500 text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-md transition-all">Todos los Centros</button>
+        <button onclick="filtrarAdopciones('ong', this)" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Refugios & ONGs 🏡</button>
+        <button onclick="filtrarAdopciones('rescatistas', this)" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Agrupaciones de Rescatistas 🐾</button>
+        <button onclick="filtrarAdopciones('plataforma', this)" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Plataformas Comunitarias 💻</button>
       </div>
 
-      <div class="grid-cards">
+      <!-- Grid de Refugios -->
+      <div id="adoptionGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Refugio 1: Estoy Aquí Mendoza -->
-        <article class="pet-card">
-          <div class="pet-img-container">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPW5NAlCkofulmI328cyGhuElxqjA-H20RDrQD71xd6h89tzPOB7XK0GE&s=10" alt="Estoy Aquí Mendoza" class="place-profile-img">
-            <span class="pet-badge ong">Rescatistas</span>
+        <!-- Tarjeta 1 -->
+        <article class="adoption-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col" data-category="rescatistas">
+          <div class="relative h-48 bg-slate-100 overflow-hidden">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPW5NAlCkofulmI328cyGhuElxqjA-H20RDrQD71xd6h89tzPOB7XK0GE&s=10" alt="Estoy Aquí Mendoza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 right-3 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Rescatistas</span>
           </div>
-          <div class="pet-info">
-            <h3>"Estoy Aquí Mendoza"</h3>
-            <p class="place-address">📍 Encuentros en Parque Central, Mendoza</p>
-            <div class="place-meta">
-              <span>🕒 Sábados: Jornadas presenciales</span>
-              <span>📱 IG: @estoyaquimendoza</span>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <h3 class="text-xl font-bold text-slate-800">"Estoy Aquí Mendoza"</h3>
+              <p class="text-xs font-medium text-slate-500 flex items-center gap-1">
+                <i class="fa-solid fa-location-dot text-brand-500"></i> Parque Central, Mendoza
+              </p>
+              <div class="text-xs text-slate-500 space-y-1 pt-1">
+                <p>🕒 Sábados: Jornadas presenciales</p>
+                <p>📱 IG: @estoyaquimendoza</p>
+              </div>
+              <p class="text-sm text-slate-600 pt-2">Asociación sin fines de lucro conformada por rescatistas y hogares de tránsito con más de 1.600 adopciones exitosas.</p>
             </div>
-            <p class="pet-description">Asociación sin fines de lucro conformada por rescatistas y hogares de tránsito. Un puente clave en Mendoza que lleva más de 1.600 perros y gatos adoptados.</p>
-            <button class="btn btn-primary" style="width: 100%; justify-content: center;">Contactar en Instagram</button>
+            <a href="https://instagram.com" target="_blank" class="w-full bg-orange-50 hover:bg-brand-500 text-brand-600 hover:text-white font-semibold py-2.5 rounded-xl text-sm transition-colors text-center block">
+              Contactar en Instagram
+            </a>
           </div>
         </article>
 
-        <!-- Refugio 2: MOPROA -->
-        <article class="pet-card">
-          <div class="pet-img-container">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7KMC1oyA0ZrP7auhVam3s67NnmDM5p5YHH9MUO4LMAjeE4B8ZEMnFAH4&s=10" alt="Refugio MOPROA" class="place-profile-img">
-            <span class="pet-badge ong">Refugio Privado</span>
+        <!-- Tarjeta 2 -->
+        <article class="adoption-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col" data-category="ong">
+          <div class="relative h-48 bg-slate-100 overflow-hidden">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7KMC1oyA0ZrP7auhVam3s67NnmDM5p5YHH9MUO4LMAjeE4B8ZEMnFAH4&s=10" alt="Refugio MOPROA" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Refugio Privado</span>
           </div>
-          <div class="pet-info">
-            <h3>Refugio MOPROA</h3>
-            <p class="place-address">📍 Gran Mendoza (Visitas con coordinación)</p>
-            <div class="place-meta">
-              <span>🕒 Atención con cita previa</span>
-              <span>📱 IG: @refugiomoproa</span>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <h3 class="text-xl font-bold text-slate-800">Refugio MOPROA</h3>
+              <p class="text-xs font-medium text-slate-500 flex items-center gap-1">
+                <i class="fa-solid fa-location-dot text-brand-500"></i> Gran Mendoza (Coordinación previa)
+              </p>
+              <div class="text-xs text-slate-500 space-y-1 pt-1">
+                <p>🕒 Atención con cita previa</p>
+                <p>📱 IG: @refugiomoproa</p>
+              </div>
+              <p class="text-sm text-slate-600 pt-2">Movimiento Pro Protectora de Animales con más de 25 años albergando y recuperando perritos de la calle.</p>
             </div>
-            <p class="pet-description">Movimiento Pro Protectora de Animales con más de 25 años albergando y recuperando perritos rescatados de las calles hasta encontrarles un hogar definitivo.</p>
-            <button class="btn btn-primary" style="width: 100%; justify-content: center;">Ver Perritos y Colaborar</button>
+            <button onclick="mostrarModalColaborar('Refugio MOPROA')" class="w-full bg-orange-50 hover:bg-brand-500 text-brand-600 hover:text-white font-semibold py-2.5 rounded-xl text-sm transition-colors">
+              Ver Perritos y Colaborar
+            </button>
           </div>
         </article>
 
-        <!-- Refugio 3: Red A la Cucha -->
-        <article class="pet-card">
-          <div class="pet-img-container">
-            <img src="https://alacucha.com/images/logoDefi.png" alt="Red A la Cucha" class="place-profile-img">
-            <span class="pet-badge red">Plataforma</span>
+        <!-- Tarjeta 3 -->
+        <article class="adoption-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col" data-category="plataforma">
+          <div class="relative h-48 bg-slate-100 overflow-hidden flex items-center justify-center bg-orange-50">
+            <span class="text-5xl">💻</span>
+            <span class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Plataforma</span>
           </div>
-          <div class="pet-info">
-            <h3>Red "A la Cucha" / Huella Consciente</h3>
-            <p class="place-address">📍 Red provincial de conectividad online</p>
-            <div class="place-meta">
-              <span>🕒 Disponible 24/7 en Mendoza</span>
-              <span>🌐 Adopción directa sin intermediarios</span>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <h3 class="text-xl font-bold text-slate-800">Red "A la Cucha"</h3>
+              <p class="text-xs font-medium text-slate-500 flex items-center gap-1">
+                <i class="fa-solid fa-location-dot text-brand-500"></i> Red provincial online
+              </p>
+              <div class="text-xs text-slate-500 space-y-1 pt-1">
+                <p>🕒 Disponible 24/7</p>
+                <p>🌐 Conexión directa</p>
+              </div>
+              <p class="text-sm text-slate-600 pt-2">Plataforma web local que conecta refugios mendocinos con familias dispuestas a adoptar responsablemente.</p>
             </div>
-            <p class="pet-description">Plataformas web locales que conectan directamente a refugios mendocinos y rescatistas independientes con familias que buscan adoptar de forma responsable.</p>
-            <button class="btn btn-primary" style="width: 100%; justify-content: center;">Buscar Mascotas en Red</button>
+            <a href="https://alacucha.com" target="_blank" class="w-full bg-orange-50 hover:bg-brand-500 text-brand-600 hover:text-white font-semibold py-2.5 rounded-xl text-sm transition-colors text-center block">
+              Buscar Mascotas en Red
+            </a>
           </div>
         </article>
 
-        <!-- Refugio 4: Santuario Mascotas Senior -->
-        <article class="pet-card">
-          <div class="pet-img-container">
-            <img src="https://jaulasvacias.org/SJV-02.svg" alt="Santuario de Mascotas Senior" class="place-profile-img">
-            <span class="pet-badge ong">Jaulas Vacías</span>
+        <!-- Tarjeta 4 -->
+        <article class="adoption-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col" data-category="ong">
+          <div class="relative h-48 bg-slate-100 overflow-hidden flex items-center justify-center bg-rose-50">
+            <span class="text-5xl">❤️</span>
+            <span class="absolute top-3 right-3 bg-rose-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Jaulas Vacías</span>
           </div>
-          <div class="pet-info">
-            <h3>Santuario de Mascotas Jaulas Vacías</h3>
-            <p class="place-address">📍 Gran Mendoza</p>
-            <div class="place-meta">
-              <span>🕒 Visitas coordinadas</span>
-              <span>❤️ Especializados en perros adultos</span>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <h3 class="text-xl font-bold text-slate-800">Santuario Mascotas Senior</h3>
+              <p class="text-xs font-medium text-slate-500 flex items-center gap-1">
+                <i class="fa-solid fa-location-dot text-brand-500"></i> Gran Mendoza
+              </p>
+              <div class="text-xs text-slate-500 space-y-1 pt-1">
+                <p>🕒 Visitas coordinadas</p>
+                <p>❤️ Especialistas en adultos</p>
+              </div>
+              <p class="text-sm text-slate-600 pt-2">Espacio dedicado al cuidado y adopción de perros gerontes rescatados que buscan un hogar cálido y tranquilo.</p>
             </div>
-            <p class="pet-description">Espacio dedicado al cuidado, concientización y adopción de perros viejitos o de edad avanzada rescatados que buscan un hogar amoroso y tranquilo.</p>
-            <button class="btn btn-primary" style="width: 100%; justify-content: center;">Adoptar un Viejito</button>
+            <button onclick="mostrarModalColaborar('Santuario Mascotas Senior')" class="w-full bg-orange-50 hover:bg-brand-500 text-brand-600 hover:text-white font-semibold py-2.5 rounded-xl text-sm transition-colors">
+              Adoptar un Viejito
+            </button>
           </div>
         </article>
 
       </div>
     </section>
 
-    <!-- ============================================================
-         2. MASCOTAS PERDIDAS Y ENCONTRADAS
-         ============================================================ -->
-    <section id="perdidos" class="lost-found-section">
-      <div class="section-header">
-        <span class="section-tag">🚨 Tablón Comunitario</span>
-        <h2>Mascotas Perdidas y Encontradas</h2>
-        <p>¿Perdiste a tu mascota o encontraste una en la Ciudad? Publicá un anuncio rápido para que los vecinos te ayuden.</p>
+    <!-- ==================== 2. MASCOTAS PERDIDAS Y ENCONTRADAS ==================== -->
+    <section id="perdidos" class="bg-gradient-to-tr from-amber-50/50 to-orange-50/30 p-8 sm:p-12 rounded-3xl border border-orange-100 space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div class="space-y-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-3 py-1 rounded-full">
+            🚨 Tablón Comunitario
+          </span>
+          <h2 class="text-3xl font-extrabold text-slate-900">Mascotas Perdidas y Encontradas</h2>
+          <p class="text-slate-600">¿Perdiste a tu mascota o encontraste una en la Ciudad? Publicá un anuncio para que los vecinos te ayuden.</p>
+        </div>
+        <button onclick="abrirModalReporte()" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-2xl shadow-lg shadow-amber-600/20 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+          <i class="fa-solid fa-circle-plus"></i> Publicar Anuncio
+        </button>
       </div>
 
-      <div class="grid-cards" style="margin-bottom: 30px;">
-        <div class="lost-card">
-          <span class="status-tag lost">Buscado 🔍</span>
-          <h3>"Toby" - Caniche Blanco</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 6px 0;">Visto por última vez en: <strong>5ta Sección (Calle Emilio Civit)</strong></p>
-          <p style="font-size: 0.9rem;">Lleva collar rojo sin placa. Muy asustadizo.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Alerta 1 -->
+        <div class="bg-white p-6 rounded-2xl border border-amber-200/60 shadow-sm space-y-3 relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-rose-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Buscado 🔍</div>
+          <h3 class="text-lg font-bold text-slate-800 pt-1">"Toby" - Caniche Blanco</h3>
+          <p class="text-xs text-slate-500 flex items-center gap-1">
+            <i class="fa-solid fa-map-pin text-rose-500"></i> 5ta Sección (Calle Emilio Civit)
+          </p>
+          <p class="text-sm text-slate-600">Lleva collar rojo sin placa. Muy asustadizo ante ruidos fuertes.</p>
+          <div class="pt-2 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
+            <span>Hace 2 horas</span>
+            <span class="text-brand-600 font-semibold cursor-pointer" onclick="verDetalleAlerta('Toby', 'Caniche Blanco', '5ta Sección')">Ver contacto &rarr;</span>
+          </div>
         </div>
 
-        <div class="lost-card found">
-          <span class="status-tag found">Encontrado 🏠</span>
-          <h3>Gato Mestizo Atigrado</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 6px 0;">Encontrado en: <strong>Plaza Independencia</strong></p>
-          <p style="font-size: 0.9rem;">Está retenido en resguardo temporal. Muy dócil y manso.</p>
+        <!-- Alerta 2 -->
+        <div class="bg-white p-6 rounded-2xl border border-emerald-200/60 shadow-sm space-y-3 relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-emerald-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Encontrado 🏠</div>
+          <h3 class="text-lg font-bold text-slate-800 pt-1">Gato Mestizo Atigrado</h3>
+          <p class="text-xs text-slate-500 flex items-center gap-1">
+            <i class="fa-solid fa-map-pin text-emerald-500"></i> Plaza Independencia
+          </p>
+          <p class="text-sm text-slate-600">Está en resguardo temporal por vecinos. Muy dócil y acostumbrado a estar en casa.</p>
+          <div class="pt-2 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
+            <span>Hace 1 día</span>
+            <span class="text-emerald-600 font-semibold cursor-pointer" onclick="verDetalleAlerta('Gato Atigrado', 'Mestizo', 'Plaza Independencia')">Ver contacto &rarr;</span>
+          </div>
         </div>
 
-        <div class="lost-card">
-          <span class="status-tag lost">Buscado 🔍</span>
-          <h3>"Luna" - Labradora Dorada</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 6px 0;">Visto por última vez en: <strong>4ta Sección (Av. San Martín)</strong></p>
-          <p style="font-size: 0.9rem;">Tiene chip registrado. Responde al nombre de Luna.</p>
+        <!-- Alerta 3 -->
+        <div class="bg-white p-6 rounded-2xl border border-amber-200/60 shadow-sm space-y-3 relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-rose-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Buscado 🔍</div>
+          <h3 class="text-lg font-bold text-slate-800 pt-1">"Luna" - Labradora Dorada</h3>
+          <p class="text-xs text-slate-500 flex items-center gap-1">
+            <i class="fa-solid fa-map-pin text-rose-500"></i> 4ta Sección (Av. San Martín)
+          </p>
+          <p class="text-sm text-slate-600">Tiene chip provincial registrado. Responde al nombre de Luna y es muy amigable.</p>
+          <div class="pt-2 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
+            <span>Hace 2 días</span>
+            <span class="text-brand-600 font-semibold cursor-pointer" onclick="verDetalleAlerta('Luna', 'Labradora Dorada', '4ta Sección')">Ver contacto &rarr;</span>
+          </div>
         </div>
-      </div>
 
-      <div style="text-align: center;">
-        <button class="btn btn-primary">➕ Publicar Anuncio de Mascota Perdida / Encontrada</button>
       </div>
     </section>
 
-    <!-- ============================================================
-         3. VETERINARIA MÓVIL Y TURNOS
-         ============================================================ -->
-    <section id="veterinaria" class="section">
-      <div class="section-header">
-        <span class="section-tag">🩺 Salud Animal</span>
-        <h2>Veterinaria Móvil & Turnos Online</h2>
-        <p>Accedé a servicios de vacunación antirrábica, desparasitación y castración gratuita en los barrios de la Capital.</p>
+    <!-- ==================== 3. VETERINARIA MÓVIL Y TURNOS ==================== -->
+    <section id="veterinaria" class="space-y-10">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">
+          🩺 Salud Animal
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Veterinaria Móvil & Turnos Online</h2>
+        <p class="text-slate-600">Accedé a servicios de vacunación antirrábica, desparasitación y castración gratuita en los barrios de la Capital.</p>
       </div>
 
-      <div class="vet-grid">
-        <!-- Recorrido del Móvil -->
-        <div class="vet-box">
-          <h3 style="margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
-            🚐 Próximos Puntos de Atención
-          </h3>
-
-          <div class="vet-schedule-item">
-            <div class="vet-date">
-              <div class="day">15</div>
-              <div class="month">Nov</div>
-            </div>
-            <div>
-              <h4 style="font-size: 1.05rem;">Gimnasio Municipal N° 1</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">Sobremonte 450, 5ta Sección • 08:30 a 12:30 hs</p>
-            </div>
-          </div>
-
-          <div class="vet-schedule-item">
-            <div class="vet-date">
-              <div class="day">22</div>
-              <div class="month">Nov</div>
-            </div>
-            <div>
-              <h4 style="font-size: 1.05rem;">Parque Central (RAMPA)</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">Av. Pellegrini y Las Heras • 09:00 a 13:00 hs</p>
-            </div>
-          </div>
-
-          <div class="vet-schedule-item">
-            <div class="vet-date">
-              <div class="day">29</div>
-              <div class="month">Nov</div>
-            </div>
-            <div>
-              <h4 style="font-size: 1.05rem;">BARRIO San Martín</h4>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">Centro de Salud N° 300 • 08:30 a 12:30 hs</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Formulario de reserva -->
-        <div class="vet-box" style="background-color: var(--soft-peach); border-color: var(--border-color);">
-          <h3 style="margin-bottom: 16px;">📅 Reservar Turno Web</h3>
-          <form onsubmit="event.preventDefault(); alert('¡Turno solicitado con éxito! Te enviamos la confirmación por email.');">
-            <div class="form-group">
-              <label for="nombre">Nombre del Vecino / Tutor</label>
-              <input type="text" id="nombre" class="form-control" placeholder="Ej. Juan Pérez" required>
-            </div>
-            <div class="form-group">
-              <label for="mascota">Tipo de Servicio</label>
-              <select id="mascota" class="form-control">
-                <option>Castración (Perros / Gatos)</option>
-                <option>Vacunación Antirrábica</option>
-                <option>Desparasitación General</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="zona">Punto de Atención</label>
-              <select id="zona" class="form-control">
-                <option>Gimnasio Municipal N° 1</option>
-                <option>Parque Central</option>
-                <option>Barrio San Martín</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">Confirmar Turno 🐾</button>
-          </form>
-        </div>
-      </div>
-
-      <!-- Formulario de Registro para Veterinarios Privados / Adheridos -->
-      <div class="vet-box" style="background-color: var(--soft-peach); border-color: var(--border-color); margin-top: 30px;">
-        <h3 style="margin-bottom: 16px;">🩺 ¿Sos Veterinario? Registrá tu Clínica</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 20px; color: var(--text-muted);">Sumate a la Red Municipal para recibir solicitudes de turnos y campañas de zoonosis de los vecinos de la Ciudad.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
-        <form id="vetRegisterForm" onsubmit="registrarVeterinaria(event)">
-          <div class="form-group">
-            <label for="vetClinicName">Nombre de la Veterinaria / Clínica *</label>
-            <input type="text" id="vetClinicName" class="form-control" placeholder="Ej. Veterinaria Cuyo" required>
-          </div>
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label for="vetDocName">Nombre del Profesional *</label>
-              <input type="text" id="vetDocName" class="form-control" placeholder="Ej. Dr. Carlos Pérez" required>
-            </div>
-            <div class="form-group">
-              <label for="vetMatricula">N° de Matrícula Provincial *</label>
-              <input type="text" id="vetMatricula" class="form-control" placeholder="Ej. MP 1420" required>
+        <!-- Próximos Puntos -->
+        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6 flex flex-col justify-between">
+          <div>
+            <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-6">
+              <i class="fa-solid fa-truck-medical text-brand-500"></i> Próximos Puntos de Atención
+            </h3>
+            
+            <div class="space-y-4">
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                <div class="bg-brand-500 text-white rounded-xl p-3 text-center min-w-[65px] shadow-sm">
+                  <span class="block text-xl font-extrabold leading-none">15</span>
+                  <span class="text-[10px] uppercase font-bold tracking-wider">Nov</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-base">Gimnasio Municipal N° 1</h4>
+                  <p class="text-xs text-slate-500 mt-1">Sobremonte 450, 5ta Sección • 08:30 a 12:30 hs</p>
+                  <span class="inline-block mt-2 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full">Cupos Disponibles</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                <div class="bg-slate-800 text-white rounded-xl p-3 text-center min-w-[65px] shadow-sm">
+                  <span class="block text-xl font-extrabold leading-none">22</span>
+                  <span class="text-[10px] uppercase font-bold tracking-wider">Nov</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-base">Parque Central (RAMPA)</h4>
+                  <p class="text-xs text-slate-500 mt-1">Av. Pellegrini y Las Heras • 09:00 a 13:00 hs</p>
+                  <span class="inline-block mt-2 text-[11px] font-semibold text-amber-600 bg-amber-50 px-2.5 py-0.5 rounded-full">Últimos Cupos</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                <div class="bg-slate-800 text-white rounded-xl p-3 text-center min-w-[65px] shadow-sm">
+                  <span class="block text-xl font-extrabold leading-none">29</span>
+                  <span class="text-[10px] uppercase font-bold tracking-wider">Nov</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-base">BARRIO San Martín</h4>
+                  <p class="text-xs text-slate-500 mt-1">Centro de Salud N° 300 • 08:30 a 12:30 hs</p>
+                  <span class="inline-block mt-2 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full">Cupos Disponibles</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="vetAddress">Dirección en la Ciudad *</label>
-              <input type="text" id="vetAddress" class="form-control" placeholder="Ej. Av. Arístides Villanueva 300" required>
+          <div class="bg-brand-50 p-4 rounded-2xl text-xs text-brand-700 flex items-center gap-3">
+            <i class="fa-solid fa-circle-info text-lg"></i>
+            <span>Recordá concurrir con correa, manta y ayuno de 8 horas en caso de castración programada.</span>
+          </div>
+        </div>
+
+        <!-- Formulario de Reserva -->
+        <div class="bg-gradient-to-br from-brand-50/50 to-orange-50/30 p-8 rounded-3xl border border-orange-100 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+              <i class="fa-regular fa-calendar-check text-brand-500"></i> Reservar Turno Web
+            </h3>
+            
+            <form id="turnoForm" onsubmit="solicitarTurnoMovil(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nombre del Vecino / Tutor</label>
+                <input type="text" id="nombreVecino" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Juan Pérez" required>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Tipo de Servicio</label>
+                  <select id="tipoServicio" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors">
+                    <option>Castración (Perros / Gatos)</option>
+                    <option>Vacunación Antirrábica</option>
+                    <option>Desparasitación General</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Punto de Atención</label>
+                  <select id="puntoAtencion" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors">
+                    <option>Gimnasio Municipal N° 1</option>
+                    <option>Parque Central</option>
+                    <option>Barrio San Martín</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-brand-500/20 transition-all flex items-center justify-center gap-2 mt-6">
+                <span>Confirmar Turno 🐾</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Registro para Veterinarios Privados -->
+      <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/80 shadow-sm max-w-4xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-100">
+          <div>
+            <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+              <i class="fa-solid fa-stethoscope text-brand-500"></i> ¿Sos Veterinario? Registrá tu Clínica
+            </h3>
+            <p class="text-sm text-slate-500 mt-1">Sumate a la Red Municipal para recibir solicitudes de turnos y campañas de zoonosis de los vecinos.</p>
+          </div>
+        </div>
+
+        <form id="vetRegisterForm" onsubmit="registrarVeterinaria(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nombre de la Veterinaria / Clínica *</label>
+            <input type="text" id="vetClinicName" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Veterinaria Cuyo" required>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nombre del Profesional *</label>
+              <input type="text" id="vetDocName" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Dr. Carlos Pérez" required>
             </div>
-            <div class="form-group">
-              <label for="vetPhone">Teléfono de Contacto / Urgencias *</label>
-              <input type="tel" id="vetPhone" class="form-control" placeholder="Ej. 261 4001234" required>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">N° de Matrícula Provincial *</label>
+              <input type="text" id="vetMatricula" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. MP 1420" required>
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Dirección en la Ciudad *</label>
+              <input type="text" id="vetAddress" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Av. Arístides Villanueva 300" required>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Teléfono de Contacto / Urgencias *</label>
+              <input type="tel" id="vetPhone" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. 261 4001234" required>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3.5 rounded-xl transition-all shadow-md mt-4">
             Inscribir mi Veterinaria en la Red 🏥
           </button>
         </form>
       </div>
     </section>
 
-    <!-- ============================================================
-         4. REGISTRO Y DNI PET MUNICIPAL (VISTA PREVIA EN VIVO)
-         ============================================================ -->
-    <section id="dni-pet" class="section">
-      <div class="section-header">
-        <span class="section-tag">🆔 Identificación Ciudadana</span>
-        <h2>Registro Único & DNI Pet de la Ciudad</h2>
-        <p>Inscribí a tu perro o gato en el Padrón Municipal para obtener su credencial digital con foto y código QR de identificación rápida.</p>
+    <!-- ==================== 4. REGISTRO Y DNI PET MUNICIPAL ==================== -->
+    <section id="dni-pet" class="space-y-10">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-100 px-3 py-1 rounded-full">
+          🆔 Identificación Ciudadana
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Registro Único & DNI Pet de la Ciudad</h2>
+        <p class="text-slate-600">Inscribí a tu perro o gato en el Padrón Municipal para obtener su credencial digital con foto y código QR de identificación rápida.</p>
       </div>
 
-      <div class="dni-container">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        <!-- Formulario de Registro con Eventos Dinámicos -->
-        <div class="dni-form-box">
-          <h3 style="margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
-            📝 Formulario de Inscripción
+        <!-- Formulario de Registro -->
+        <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+          <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+            <i class="fa-solid fa-id-card text-brand-500"></i> Formulario de Inscripción
           </h3>
-          <form id="petRegisterForm" onsubmit="generarDNIPet(event)">
-            
-            <div class="form-row">
-              <div class="form-group">
-                <label for="petName">Nombre de la Mascota *</label>
-                <input type="text" id="petName" class="form-control" placeholder="Ej. Buki" oninput="actualizarVistaPrevia()" required>
+
+          <form id="petRegisterForm" onsubmit="generarDNIPet(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nombre de la Mascota *</label>
+                <input type="text" id="petName" oninput="actualizarVistaPrevia()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Buki" required>
               </div>
-              <div class="form-group">
-                <label for="petType">Especie *</label>
-                <select id="petType" class="form-control" onchange="actualizarVistaPrevia()">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Especie *</label>
+                <select id="petType" onchange="actualizarVistaPrevia()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors">
                   <option value="Perro 🐕">Perro 🐕</option>
                   <option value="Gato 🐱">Gato 🐱</option>
                   <option value="Otro 🐾">Otro 🐾</option>
@@ -347,32 +510,31 @@
               </div>
             </div>
 
-            <!-- Campo para subir foto -->
-            <div class="form-group">
-              <label for="petPhotoFile">Foto de tu Mascota 📸 *</label>
-              <input type="file" id="petPhotoFile" class="form-control" accept="image/*" onchange="actualizarFoto(event)" required style="padding: 9px;">
-              <small style="color: var(--text-muted); font-size: 0.75rem;">Sube una foto clara de frente (JPG o PNG).</small>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Foto de tu Mascota 📸 *</label>
+              <input type="file" id="petPhotoFile" accept="image/*" onchange="actualizarFoto(event)" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-700 hover:file:bg-brand-100 cursor-pointer" required>
+              <span class="text-[11px] text-slate-400 block mt-1">Sube una foto clara de frente (JPG o PNG).</span>
             </div>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label for="petBreed">Raza / Pelaje</label>
-                <input type="text" id="petBreed" class="form-control" placeholder="Ej. Mestizo / Barbucho" oninput="actualizarVistaPrevia()">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Raza / Pelaje</label>
+                <input type="text" id="petBreed" oninput="actualizarVistaPrevia()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Mestizo / Barbucho">
               </div>
-              <div class="form-group">
-                <label for="petAge">Edad Aprox.</label>
-                <input type="text" id="petAge" class="form-control" placeholder="Ej. 3 años">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Edad Aprox.</label>
+                <input type="text" id="petAge" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. 3 años">
               </div>
             </div>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label for="ownerName">Nombre del Tutor/a *</label>
-                <input type="text" id="ownerName" class="form-control" placeholder="Ej. Mariana Gómez" oninput="actualizarVistaPrevia()" required>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nombre del Tutor/a *</label>
+                <input type="text" id="ownerName" oninput="actualizarVistaPrevia()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Mariana Gómez" required>
               </div>
-              <div class="form-group">
-                <label for="ownerZone">Barrio / Sección en Mendoza *</label>
-                <select id="ownerZone" class="form-control" onchange="actualizarVistaPrevia()">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Barrio / Sección en Mendoza *</label>
+                <select id="ownerZone" onchange="actualizarVistaPrevia()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors">
                   <option value="5ta Sección">5ta Sección</option>
                   <option value="4ta Sección">4ta Sección</option>
                   <option value="6ta Sección">6ta Sección</option>
@@ -384,75 +546,83 @@
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="ownerPhone">Teléfono de Contacto (para emergencias) *</label>
-              <input type="tel" id="ownerPhone" class="form-control" placeholder="Ej. 261 155123456" oninput="actualizarVistaPrevia()" required>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Teléfono de Contacto (Emergencias) *</label>
+              <input type="tel" id="ownerPhone" oninput="actualizarVistaPrevia()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. 261 155123456" required>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">
+            <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-4 rounded-xl shadow-lg shadow-brand-500/25 transition-all text-center mt-4">
               Generar DNI Pet Digital 🦴
             </button>
           </form>
         </div>
 
         <!-- Vista Previa de la Credencial DNI Pet -->
-        <div class="dni-card-preview-container">
-          <h3 style="margin-bottom: 20px; text-align: center;">🪪 Vista Previa en Vivo</h3>
-          
-          <div class="dni-card" id="dniCard">
-            <div class="dni-card-header">
-              <div class="dni-mendoza-logo">
-                <strong>Mendoza Capital</strong>
-                <span>Registro Único de Mascotas</span>
-              </div>
-              <div class="dni-flag">🐾</div>
-            </div>
+        <div class="lg:col-span-5 space-y-6 sticky top-28">
+          <div class="text-center">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">🪪 Vista Previa en Vivo</span>
+          </div>
 
-            <div class="dni-card-body">
-              <div class="dni-photo-placeholder" id="dniPhotoContainer">
-                <img id="cardPetImg" src="" alt="Foto Mascota" style="width: 100%; height: 100%; object-fit: cover; display: none;">
-                <span id="cardDefaultEmoji">🐕</span>
+          <!-- Tarjeta DNI -->
+          <div id="dniCard" class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white rounded-3xl p-6 shadow-2xl border border-slate-700/60 relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 text-9xl opacity-5 pointer-events-none select-none font-bold">🐾</div>
+            
+            <!-- Header Tarjeta -->
+            <div class="flex justify-between items-center border-b border-slate-700/80 pb-4 mb-5">
+              <div>
+                <h4 class="font-bold font-heading text-sm text-brand-400 tracking-wide">Mendoza Capital</h4>
+                <p class="text-[11px] text-slate-400 font-medium">Registro Único de Mascotas</p>
               </div>
-              <div class="dni-details">
-                <div class="dni-field">
-                  <span class="label">NOMBRE:</span>
-                  <span class="value" id="cardPetName">BUKI</span>
-                </div>
-                <div class="dni-field">
-                  <span class="label">ESPECIE / RAZA:</span>
-                  <span class="value" id="cardPetBreed">Perro • Mestizo</span>
-                </div>
-                <div class="dni-field">
-                  <span class="label">TUTOR/A:</span>
-                  <span class="value" id="cardOwnerName">Mariana Gómez</span>
-                </div>
-                <div class="dni-field">
-                  <span class="label">ZONA:</span>
-                  <span class="value" id="cardOwnerZone">5ta Sección</span>
-                </div>
-                <div class="dni-field">
-                  <span class="label">CONTACTO:</span>
-                  <span class="value" id="cardOwnerPhone">261 155123456</span>
-                </div>
+              <div class="w-10 h-10 rounded-xl bg-brand-500/20 border border-brand-500/40 flex items-center justify-center text-lg">
+                🐾
               </div>
             </div>
 
-            <div class="dni-card-footer">
-              <div class="dni-code">
-                <span>N° REGISTRO MUNICIPAL</span>
-                <strong id="cardRegisterNum">MZA-2026-88412</strong>
+            <!-- Cuerpo Tarjeta -->
+            <div class="flex gap-5 items-center mb-6">
+              <div id="dniPhotoContainer" class="w-24 h-28 rounded-2xl bg-slate-700/80 border-2 border-brand-500/50 overflow-hidden flex items-center justify-center relative shrink-0 shadow-inner">
+                <img id="cardPetImg" src="" alt="Foto Mascota" class="w-full h-full object-cover hidden">
+                <span id="cardDefaultEmoji" class="text-3xl">🐕</span>
               </div>
-              <div class="dni-qr">
-                🏁 QR
+              
+              <div class="space-y-1.5 text-xs flex-1 min-w-0">
+                <div>
+                  <span class="text-[10px] text-slate-400 font-bold block uppercase tracking-wider">NOMBRE:</span>
+                  <span id="cardPetName" class="font-extrabold text-base text-white tracking-wide truncate block">BUKI</span>
+                </div>
+                <div>
+                  <span class="text-[10px] text-slate-400 font-bold block uppercase tracking-wider">ESPECIE / RAZA:</span>
+                  <span id="cardPetBreed" class="text-slate-200 truncate block">Perro • Mestizo</span>
+                </div>
+                <div>
+                  <span class="text-[10px] text-slate-400 font-bold block uppercase tracking-wider">TUTOR/A:</span>
+                  <span id="cardOwnerName" class="text-slate-200 truncate block">Mariana Gómez</span>
+                </div>
+                <div>
+                  <span class="text-[10px] text-slate-400 font-bold block uppercase tracking-wider">ZONA:</span>
+                  <span id="cardOwnerZone" class="text-slate-200 truncate block">5ta Sección</span>
+                </div>
+                <div>
+                  <span class="text-[10px] text-slate-400 font-bold block uppercase tracking-wider">CONTACTO:</span>
+                  <span id="cardOwnerPhone" class="text-slate-200 truncate block">261 155123456</span>
+                </div>
               </div>
+            </div>
+
+            <!-- Footer Tarjeta -->
+            <div class="pt-4 border-t border-slate-700/80 flex items-center justify-between">
+              <div>
+                <span class="text-[9px] text-slate-400 uppercase tracking-widest block font-bold">N° REGISTRO MUNICIPAL</span>
+                <span id="cardRegisterNum" class="text-xs font-mono font-bold text-brand-300">MZA-2026-88412</span>
+              </div>
+              <!-- Contenedor del QR dinámico -->
+              <div id="qrcode" class="bg-white p-1 rounded-lg shrink-0 w-12 h-12 flex items-center justify-center"></div>
             </div>
           </div>
 
-          <div style="text-align: center; margin-top: 20px;">
-            <button class="btn btn-secondary" onclick="window.print()" style="font-size: 0.9rem;">
-              🖨️ Imprimir / Descargar Credencial
-            </button>
-          </div>
+          <button onclick="window.print()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3.5 rounded-2xl text-sm transition-all shadow-md flex items-center justify-center gap-2">
+            <i class="fa-solid fa-print"></i> Imprimir / Descargar Credencial
+          </button>
         </div>
 
       </div>
@@ -460,38 +630,208 @@
 
   </main>
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
-  <footer>
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <h3>Mascotas Capital 🐾</h3>
-        <p>Plataforma para promover el cuidado responsable, la adopción y el respeto por los animales en Mendoza junto a la red de refugios e instituciones.</p>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-900 text-slate-400 pt-16 pb-12 mt-24 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="space-y-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-brand-500 rounded-xl flex items-center justify-center text-white text-xl">
+              🐾
+            </div>
+            <span class="text-xl font-bold font-heading text-white">Mascotas Capital</span>
+          </div>
+          <p class="text-sm text-slate-400 max-w-sm">
+            Plataforma para promover el cuidado responsable, la adopción y el respeto por los animales en Mendoza junto a la red de refugios e instituciones.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider">Enlaces Rápidos</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#puntos-adopcion" class="hover:text-white transition-colors">Red de Adopción</a></li>
+            <li><a href="#perdidos" class="hover:text-white transition-colors">Mascotas Perdidas</a></li>
+            <li><a href="#veterinaria" class="hover:text-white transition-colors">Veterinaria Móvil</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider">Contacto Útil</h4>
+          <ul class="space-y-2 text-sm">
+            <li><i class="fa-solid fa-phone text-brand-500 mr-2"></i> Tel: 147 (Atención Ciudadana)</li>
+            <li><i class="fa-solid fa-location-dot text-brand-500 mr-2"></i> Av. 9 de Julio 500, Mendoza</li>
+            <li><i class="fa-solid fa-envelope text-brand-500 mr-2"></i> mascotas@ciudaddemendoza.gob.ar</li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-links">
-        <h4>Enlaces Rápidos</h4>
-        <ul>
-          <li><a href="#puntos-adopcion">Red de Adopción</a></li>
-          <li><a href="#perdidos">Mascotas Perdidas</a></li>
-          <li><a href="#veterinaria">Veterinaria Móvil</a></li>
-        </ul>
+
+      <div class="border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Municipalidad de la Ciudad de Mendoza. Todos los derechos reservados. 🦴🐾</p>
       </div>
-      <div class="footer-links">
-        <h4>Contacto Útil</h4>
-        <ul>
-          <li>📞 Tel: 147 (Atención Ciudadana)</li>
-          <li>📍 Av. 9 de Julio 500, Mendoza</li>
-          <li>📧 mascotas@ciudaddemendoza.gob.ar</li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>&copy; 2026 Municipalidad de la Ciudad de Mendoza. Todos los derechos reservados. 🦴🐾</p>
     </div>
   </footer>
 
-  <!-- Script de JavaScript Externo -->
-  <script src="script.js"></script>
+  <!-- ==================== TOAST NOTIFICATION CONTAINER ==================== -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-50 space-y-2 pointer-events-none"></div>
+
+  <!-- ==================== SCRIPTS & LÓGICA INTERACTIVA ==================== -->
+  <script>
+    // 1. Menú Móvil Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // 2. Generador inicial de código QR para el DNI Pet predeterminado
+    let qrInstance = null;
+    function initQR(text) {
+      const qrContainer = document.getElementById('qrcode');
+      qrContainer.innerHTML = "";
+      qrInstance = new QRCode(qrContainer, {
+        text: text || "https://ciudaddemendoza.gob.ar/mascotas/dni/MZA-2026-88412",
+        width: 44,
+        height: 44,
+        colorDark: "#0f172a",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      initQR("https://ciudaddemendoza.gob.ar/mascotas/dni/MZA-2026-88412");
+    });
+
+    // 3. Actualización de Vista Previa del DNI Pet en vivo
+    function actualizarVistaPrevia() {
+      const name = document.getElementById('petName').value || "BUKI";
+      const type = document.getElementById('petType').value;
+      const breed = document.getElementById('petBreed').value || "Mestizo";
+      const owner = document.getElementById('ownerName').value || "Mariana Gómez";
+      const zone = document.getElementById('ownerZone').value;
+      const phone = document.getElementById('ownerPhone').value || "261 155123456";
+
+      document.getElementById('cardPetName').innerText = name.toUpperCase();
+      
+      let especieLimpia = type.split(' ')[0];
+      document.getElementById('cardPetBreed').innerText = `${especieLimpia} • ${breed}`;
+      document.getElementById('cardOwnerName').innerText = owner;
+      document.getElementById('cardOwnerZone').innerText = zone;
+      document.getElementById('cardOwnerPhone').innerText = phone;
+
+      // Actualizar texto del QR o re-generar
+      if(qrInstance) {
+        const regNum = document.getElementById('cardRegisterNum').innerText;
+        qrInstance.makeCode(`https://ciudaddemendoza.gob.ar/mascotas/dni/${regNum}?pet=${encodeURIComponent(name)}&owner=${encodeURIComponent(owner)}`);
+      }
+    }
+
+    // 4. Lector de imagen subida (FileReader)
+    function actualizarFoto(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const cardImg = document.getElementById('cardPetImg');
+          const defaultEmoji = document.getElementById('cardDefaultEmoji');
+          
+          cardImg.src = e.target.result;
+          cardImg.classList.remove('hidden');
+          defaultEmoji.classList.add('hidden');
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // 5. Filtros de Red de Adopción
+    function filtrarAdopciones(categoria, btnElement) {
+      // Botones estilo active
+      const buttons = document.querySelectorAll('#filterButtons button');
+      buttons.forEach(b => {
+        b.classList.remove('bg-brand-500', 'text-white', 'shadow-md');
+        b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+      });
+      btnElement.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+      btnElement.classList.add('bg-brand-500', 'text-white', 'shadow-md');
+
+      // Filtrar tarjetas
+      const cards = document.querySelectorAll('.adoption-card');
+      cards.forEach(card => {
+        if(categoria === 'todos' || card.getAttribute('data-category') === categoria) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 6. Sistema de Notificaciones Toast
+    function mostrarToast(mensaje, tipo = 'success') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      
+      const bgColor = tipo === 'success' ? 'bg-slate-900 text-white' : 'bg-brand-600 text-white';
+      const icon = tipo === 'success' ? 'fa-circle-check text-emerald-400' : 'fa-circle-exclamation text-white';
+
+      toast.className = `pointer-events-auto flex items-center gap-3 px-5 py-4 rounded-2xl shadow-xl ${bgColor} transform translate-y-5 opacity-0 transition-all duration-300 font-medium text-sm`;
+      toast.innerHTML = `<i class="fa-solid ${icon} text-lg"></i><span>${mensaje}</span>`;
+      
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-5', 'opacity-0');
+      }, 50);
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-5', 'opacity-0');
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    }
+
+    // 7. Acciones de Formularios
+    function generarDNIPet(e) {
+      e.preventDefault();
+      const randomNum = Math.floor(10000 + Math.random() * 90000);
+      const nuevoReg = `MZA-2026-${randomNum}`;
+      document.getElementById('cardRegisterNum').innerText = nuevoReg;
+      
+      actualizarVistaPrevia();
+      mostrarToast('¡DNI Pet generado con éxito! Ya puedes descargarlo o imprimirlo.');
+      
+      // Scroll suave hacia la credencial en mobile
+      document.getElementById('dniCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function solicitarTurnoMovil(e) {
+      e.preventDefault();
+      const vecino = document.getElementById('nombreVecino').value;
+      const servicio = document.getElementById('tipoServicio').value;
+      const punto = document.getElementById('puntoAtencion').value;
+      
+      mostrarToast(`¡Turno reservado para ${vecino}! (${servicio} en ${punto})`);
+      document.getElementById('turnoForm').reset();
+    }
+
+    function registrarVeterinaria(e) {
+      e.preventDefault();
+      const clinica = document.getElementById('vetClinicName').value;
+      mostrarToast(`¡Clínica "${clinica}" inscripta en la Red Municipal con éxito!`);
+      document.getElementById('vetRegisterForm').reset();
+    }
+
+    function mostrarModalColaborar(refugio) {
+      mostrarToast(`Abriendo canales de colaboración con ${refugio}...`);
+    }
+
+    function verDetalleAlerta(nombre, especie, zona) {
+      mostrarToast(`Mostrando datos de contacto para la alerta de ${nombre} (${especie}) en ${zona}.`);
+    }
+
+    function abrirModalReporte() {
+      const mascota = prompt("¿Qué tipo de anuncio deseas publicar? (Escribe 'Perdido' o 'Encontrado'):");
+      if(mascota) {
+        mostrarToast('Redirigiendo al centro de reportes ciudadanos...');
+      }
+    }
+  </script>
 </body>
 </html>
