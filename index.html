@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mascotas Capital | Municipalidad de Mendoza 🐾🦴</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="brand">
+        <div class="brand-icon">🐾</div>
+        <div>
+          <div class="brand-title">Mascotas Capital</div>
+          <div class="brand-subtitle">Red Comunitaria de Mendoza</div>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#puntos-adopcion">📍 Red de Adopción</a></li>
+        <li><a href="#perdidos">🔍 Perdidos & Encontrados</a></li>
+        <li><a href="#veterinaria">🚐 Turnos & Veterinarias</a></li>
+        <li><a href="#dni-pet" class="btn-header">Registrar Mi Mascota 🦴</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO BANNER
+       ============================================================ -->
+  <header class="hero">
+    <div class="hero-bg-paws" style="top: 10%; left: 5%;">🐾</div>
+    <div class="hero-bg-paws" style="bottom: 15%; right: 10%;">🦴</div>
+    
+    <div class="container hero-content">
+      <div>
+        <span class="hero-badge">🦴 Red de Protección Animal</span>
+        <h1>Conectamos refugios, rescatistas y familias adoptantes</h1>
+        <p>Encontrá tu nuevo compañero a través de refugios independientes, agrupaciones de rescatistas y ferias de adopción de todo Mendoza.</p>
+        <div class="hero-actions">
+          <a href="#puntos-adopcion" class="btn btn-primary">Dónde Adoptar 🏠</a>
+          <a href="#veterinaria" class="btn btn-secondary">Turnos de Veterinaria 📅</a>
+        </div>
+      </div>
+      <div>
+        <div class="hero-card-preview">
+          <div style="font-size: 3.5rem; margin-bottom: 10px;">🐕</div>
+          <h3>¡Saca el DNI de tu Mascota!</h3>
+          <p style="font-size: 0.9rem; margin-top: 8px;">Obtené el registro digital con código QR para su identificación y seguimiento veterinario.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ============================================================
+         1. RED DE ADOPCIÓN RESPONSABLE
+         ============================================================ -->
+    <section id="puntos-adopcion" class="section">
+      <div class="section-header">
+        <span class="section-tag">📍 Red Comunitaria y Proteccionistas</span>
+        <h2>Refugios y Agrupaciones de Adopción en Mendoza</h2>
+        <p>Conocé a los refugios independientes, protectoras y agrupaciones que trabajan día a día rescatando y cuidando animales.</p>
+      </div>
+
+      <div class="adoption-filters">
+        <button class="filter-btn active">Todos los Centros</button>
+        <button class="filter-btn">Refugios & ONGs 🏡</button>
+        <button class="filter-btn">Agrupaciones de Rescatistas 🐾</button>
+        <button class="filter-btn">Plataformas Comunitarias 💻</button>
+      </div>
+
+      <div class="grid-cards">
+        
+        <!-- Refugio 1: Estoy Aquí Mendoza -->
+        <article class="pet-card">
+          <div class="pet-img-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPW5NAlCkofulmI328cyGhuElxqjA-H20RDrQD71xd6h89tzPOB7XK0GE&s=10" alt="Estoy Aquí Mendoza" class="place-profile-img">
+            <span class="pet-badge ong">Rescatistas</span>
+          </div>
+          <div class="pet-info">
+            <h3>"Estoy Aquí Mendoza"</h3>
+            <p class="place-address">📍 Encuentros en Parque Central, Mendoza</p>
+            <div class="place-meta">
+              <span>🕒 Sábados: Jornadas presenciales</span>
+              <span>📱 IG: @estoyaquimendoza</span>
+            </div>
+            <p class="pet-description">Asociación sin fines de lucro conformada por rescatistas y hogares de tránsito. Un puente clave en Mendoza que lleva más de 1.600 perros y gatos adoptados.</p>
+            <button class="btn btn-primary" style="width: 100%; justify-content: center;">Contactar en Instagram</button>
+          </div>
+        </article>
+
+        <!-- Refugio 2: MOPROA -->
+        <article class="pet-card">
+          <div class="pet-img-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7KMC1oyA0ZrP7auhVam3s67NnmDM5p5YHH9MUO4LMAjeE4B8ZEMnFAH4&s=10" alt="Refugio MOPROA" class="place-profile-img">
+            <span class="pet-badge ong">Refugio Privado</span>
+          </div>
+          <div class="pet-info">
+            <h3>Refugio MOPROA</h3>
+            <p class="place-address">📍 Gran Mendoza (Visitas con coordinación)</p>
+            <div class="place-meta">
+              <span>🕒 Atención con cita previa</span>
+              <span>📱 IG: @refugiomoproa</span>
+            </div>
+            <p class="pet-description">Movimiento Pro Protectora de Animales con más de 25 años albergando y recuperando perritos rescatados de las calles hasta encontrarles un hogar definitivo.</p>
+            <button class="btn btn-primary" style="width: 100%; justify-content: center;">Ver Perritos y Colaborar</button>
+          </div>
+        </article>
+
+        <!-- Refugio 3: Red A la Cucha -->
+        <article class="pet-card">
+          <div class="pet-img-container">
+            <img src="https://alacucha.com/images/logoDefi.png" alt="Red A la Cucha" class="place-profile-img">
+            <span class="pet-badge red">Plataforma</span>
+          </div>
+          <div class="pet-info">
+            <h3>Red "A la Cucha" / Huella Consciente</h3>
+            <p class="place-address">📍 Red provincial de conectividad online</p>
+            <div class="place-meta">
+              <span>🕒 Disponible 24/7 en Mendoza</span>
+              <span>🌐 Adopción directa sin intermediarios</span>
+            </div>
+            <p class="pet-description">Plataformas web locales que conectan directamente a refugios mendocinos y rescatistas independientes con familias que buscan adoptar de forma responsable.</p>
+            <button class="btn btn-primary" style="width: 100%; justify-content: center;">Buscar Mascotas en Red</button>
+          </div>
+        </article>
+
+        <!-- Refugio 4: Santuario Mascotas Senior -->
+        <article class="pet-card">
+          <div class="pet-img-container">
+            <img src="https://jaulasvacias.org/SJV-02.svg" alt="Santuario de Mascotas Senior" class="place-profile-img">
+            <span class="pet-badge ong">Jaulas Vacías</span>
+          </div>
+          <div class="pet-info">
+            <h3>Santuario de Mascotas Jaulas Vacías</h3>
+            <p class="place-address">📍 Gran Mendoza</p>
+            <div class="place-meta">
+              <span>🕒 Visitas coordinadas</span>
+              <span>❤️ Especializados en perros adultos</span>
+            </div>
+            <p class="pet-description">Espacio dedicado al cuidado, concientización y adopción de perros viejitos o de edad avanzada rescatados que buscan un hogar amoroso y tranquilo.</p>
+            <button class="btn btn-primary" style="width: 100%; justify-content: center;">Adoptar un Viejito</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. MASCOTAS PERDIDAS Y ENCONTRADAS
+         ============================================================ -->
+    <section id="perdidos" class="lost-found-section">
+      <div class="section-header">
+        <span class="section-tag">🚨 Tablón Comunitario</span>
+        <h2>Mascotas Perdidas y Encontradas</h2>
+        <p>¿Perdiste a tu mascota o encontraste una en la Ciudad? Publicá un anuncio rápido para que los vecinos te ayuden.</p>
+      </div>
+
+      <div class="grid-cards" style="margin-bottom: 30px;">
+        <div class="lost-card">
+          <span class="status-tag lost">Buscado 🔍</span>
+          <h3>"Toby" - Caniche Blanco</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 6px 0;">Visto por última vez en: <strong>5ta Sección (Calle Emilio Civit)</strong></p>
+          <p style="font-size: 0.9rem;">Lleva collar rojo sin placa. Muy asustadizo.</p>
+        </div>
+
+        <div class="lost-card found">
+          <span class="status-tag found">Encontrado 🏠</span>
+          <h3>Gato Mestizo Atigrado</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 6px 0;">Encontrado en: <strong>Plaza Independencia</strong></p>
+          <p style="font-size: 0.9rem;">Está retenido en resguardo temporal. Muy dócil y manso.</p>
+        </div>
+
+        <div class="lost-card">
+          <span class="status-tag lost">Buscado 🔍</span>
+          <h3>"Luna" - Labradora Dorada</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 6px 0;">Visto por última vez en: <strong>4ta Sección (Av. San Martín)</strong></p>
+          <p style="font-size: 0.9rem;">Tiene chip registrado. Responde al nombre de Luna.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <button class="btn btn-primary">➕ Publicar Anuncio de Mascota Perdida / Encontrada</button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. VETERINARIA MÓVIL Y TURNOS
+         ============================================================ -->
+    <section id="veterinaria" class="section">
+      <div class="section-header">
+        <span class="section-tag">🩺 Salud Animal</span>
+        <h2>Veterinaria Móvil & Turnos Online</h2>
+        <p>Accedé a servicios de vacunación antirrábica, desparasitación y castración gratuita en los barrios de la Capital.</p>
+      </div>
+
+      <div class="vet-grid">
+        <!-- Recorrido del Móvil -->
+        <div class="vet-box">
+          <h3 style="margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+            🚐 Próximos Puntos de Atención
+          </h3>
+
+          <div class="vet-schedule-item">
+            <div class="vet-date">
+              <div class="day">15</div>
+              <div class="month">Nov</div>
+            </div>
+            <div>
+              <h4 style="font-size: 1.05rem;">Gimnasio Municipal N° 1</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Sobremonte 450, 5ta Sección • 08:30 a 12:30 hs</p>
+            </div>
+          </div>
+
+          <div class="vet-schedule-item">
+            <div class="vet-date">
+              <div class="day">22</div>
+              <div class="month">Nov</div>
+            </div>
+            <div>
+              <h4 style="font-size: 1.05rem;">Parque Central (RAMPA)</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Av. Pellegrini y Las Heras • 09:00 a 13:00 hs</p>
+            </div>
+          </div>
+
+          <div class="vet-schedule-item">
+            <div class="vet-date">
+              <div class="day">29</div>
+              <div class="month">Nov</div>
+            </div>
+            <div>
+              <h4 style="font-size: 1.05rem;">BARRIO San Martín</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Centro de Salud N° 300 • 08:30 a 12:30 hs</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario de reserva -->
+        <div class="vet-box" style="background-color: var(--soft-peach); border-color: var(--border-color);">
+          <h3 style="margin-bottom: 16px;">📅 Reservar Turno Web</h3>
+          <form onsubmit="event.preventDefault(); alert('¡Turno solicitado con éxito! Te enviamos la confirmación por email.');">
+            <div class="form-group">
+              <label for="nombre">Nombre del Vecino / Tutor</label>
+              <input type="text" id="nombre" class="form-control" placeholder="Ej. Juan Pérez" required>
+            </div>
+            <div class="form-group">
+              <label for="mascota">Tipo de Servicio</label>
+              <select id="mascota" class="form-control">
+                <option>Castración (Perros / Gatos)</option>
+                <option>Vacunación Antirrábica</option>
+                <option>Desparasitación General</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="zona">Punto de Atención</label>
+              <select id="zona" class="form-control">
+                <option>Gimnasio Municipal N° 1</option>
+                <option>Parque Central</option>
+                <option>Barrio San Martín</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">Confirmar Turno 🐾</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Formulario de Registro para Veterinarios Privados / Adheridos -->
+      <div class="vet-box" style="background-color: var(--soft-peach); border-color: var(--border-color); margin-top: 30px;">
+        <h3 style="margin-bottom: 16px;">🩺 ¿Sos Veterinario? Registrá tu Clínica</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 20px; color: var(--text-muted);">Sumate a la Red Municipal para recibir solicitudes de turnos y campañas de zoonosis de los vecinos de la Ciudad.</p>
+        
+        <form id="vetRegisterForm" onsubmit="registrarVeterinaria(event)">
+          <div class="form-group">
+            <label for="vetClinicName">Nombre de la Veterinaria / Clínica *</label>
+            <input type="text" id="vetClinicName" class="form-control" placeholder="Ej. Veterinaria Cuyo" required>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vetDocName">Nombre del Profesional *</label>
+              <input type="text" id="vetDocName" class="form-control" placeholder="Ej. Dr. Carlos Pérez" required>
+            </div>
+            <div class="form-group">
+              <label for="vetMatricula">N° de Matrícula Provincial *</label>
+              <input type="text" id="vetMatricula" class="form-control" placeholder="Ej. MP 1420" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vetAddress">Dirección en la Ciudad *</label>
+              <input type="text" id="vetAddress" class="form-control" placeholder="Ej. Av. Arístides Villanueva 300" required>
+            </div>
+            <div class="form-group">
+              <label for="vetPhone">Teléfono de Contacto / Urgencias *</label>
+              <input type="tel" id="vetPhone" class="form-control" placeholder="Ej. 261 4001234" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">
+            Inscribir mi Veterinaria en la Red 🏥
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. REGISTRO Y DNI PET MUNICIPAL (VISTA PREVIA EN VIVO)
+         ============================================================ -->
+    <section id="dni-pet" class="section">
+      <div class="section-header">
+        <span class="section-tag">🆔 Identificación Ciudadana</span>
+        <h2>Registro Único & DNI Pet de la Ciudad</h2>
+        <p>Inscribí a tu perro o gato en el Padrón Municipal para obtener su credencial digital con foto y código QR de identificación rápida.</p>
+      </div>
+
+      <div class="dni-container">
+        
+        <!-- Formulario de Registro con Eventos Dinámicos -->
+        <div class="dni-form-box">
+          <h3 style="margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+            📝 Formulario de Inscripción
+          </h3>
+          <form id="petRegisterForm" onsubmit="generarDNIPet(event)">
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="petName">Nombre de la Mascota *</label>
+                <input type="text" id="petName" class="form-control" placeholder="Ej. Buki" oninput="actualizarVistaPrevia()" required>
+              </div>
+              <div class="form-group">
+                <label for="petType">Especie *</label>
+                <select id="petType" class="form-control" onchange="actualizarVistaPrevia()">
+                  <option value="Perro 🐕">Perro 🐕</option>
+                  <option value="Gato 🐱">Gato 🐱</option>
+                  <option value="Otro 🐾">Otro 🐾</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Campo para subir foto -->
+            <div class="form-group">
+              <label for="petPhotoFile">Foto de tu Mascota 📸 *</label>
+              <input type="file" id="petPhotoFile" class="form-control" accept="image/*" onchange="actualizarFoto(event)" required style="padding: 9px;">
+              <small style="color: var(--text-muted); font-size: 0.75rem;">Sube una foto clara de frente (JPG o PNG).</small>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="petBreed">Raza / Pelaje</label>
+                <input type="text" id="petBreed" class="form-control" placeholder="Ej. Mestizo / Barbucho" oninput="actualizarVistaPrevia()">
+              </div>
+              <div class="form-group">
+                <label for="petAge">Edad Aprox.</label>
+                <input type="text" id="petAge" class="form-control" placeholder="Ej. 3 años">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="ownerName">Nombre del Tutor/a *</label>
+                <input type="text" id="ownerName" class="form-control" placeholder="Ej. Mariana Gómez" oninput="actualizarVistaPrevia()" required>
+              </div>
+              <div class="form-group">
+                <label for="ownerZone">Barrio / Sección en Mendoza *</label>
+                <select id="ownerZone" class="form-control" onchange="actualizarVistaPrevia()">
+                  <option value="5ta Sección">5ta Sección</option>
+                  <option value="4ta Sección">4ta Sección</option>
+                  <option value="6ta Sección">6ta Sección</option>
+                  <option value="Barrio San Martín">Barrio San Martín</option>
+                  <option value="Centro / Peatonal">Centro / Peatonal</option>
+                  <option value="Barrio Cano">Barrio Cano</option>
+                  <option value="Barrio La Favorita">Barrio La Favorita</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="ownerPhone">Teléfono de Contacto (para emergencias) *</label>
+              <input type="tel" id="ownerPhone" class="form-control" placeholder="Ej. 261 155123456" oninput="actualizarVistaPrevia()" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">
+              Generar DNI Pet Digital 🦴
+            </button>
+          </form>
+        </div>
+
+        <!-- Vista Previa de la Credencial DNI Pet -->
+        <div class="dni-card-preview-container">
+          <h3 style="margin-bottom: 20px; text-align: center;">🪪 Vista Previa en Vivo</h3>
+          
+          <div class="dni-card" id="dniCard">
+            <div class="dni-card-header">
+              <div class="dni-mendoza-logo">
+                <strong>Mendoza Capital</strong>
+                <span>Registro Único de Mascotas</span>
+              </div>
+              <div class="dni-flag">🐾</div>
+            </div>
+
+            <div class="dni-card-body">
+              <div class="dni-photo-placeholder" id="dniPhotoContainer">
+                <img id="cardPetImg" src="" alt="Foto Mascota" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                <span id="cardDefaultEmoji">🐕</span>
+              </div>
+              <div class="dni-details">
+                <div class="dni-field">
+                  <span class="label">NOMBRE:</span>
+                  <span class="value" id="cardPetName">BUKI</span>
+                </div>
+                <div class="dni-field">
+                  <span class="label">ESPECIE / RAZA:</span>
+                  <span class="value" id="cardPetBreed">Perro • Mestizo</span>
+                </div>
+                <div class="dni-field">
+                  <span class="label">TUTOR/A:</span>
+                  <span class="value" id="cardOwnerName">Mariana Gómez</span>
+                </div>
+                <div class="dni-field">
+                  <span class="label">ZONA:</span>
+                  <span class="value" id="cardOwnerZone">5ta Sección</span>
+                </div>
+                <div class="dni-field">
+                  <span class="label">CONTACTO:</span>
+                  <span class="value" id="cardOwnerPhone">261 155123456</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dni-card-footer">
+              <div class="dni-code">
+                <span>N° REGISTRO MUNICIPAL</span>
+                <strong id="cardRegisterNum">MZA-2026-88412</strong>
+              </div>
+              <div class="dni-qr">
+                🏁 QR
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 20px;">
+            <button class="btn btn-secondary" onclick="window.print()" style="font-size: 0.9rem;">
+              🖨️ Imprimir / Descargar Credencial
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>Mascotas Capital 🐾</h3>
+        <p>Plataforma para promover el cuidado responsable, la adopción y el respeto por los animales en Mendoza junto a la red de refugios e instituciones.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="#puntos-adopcion">Red de Adopción</a></li>
+          <li><a href="#perdidos">Mascotas Perdidas</a></li>
+          <li><a href="#veterinaria">Veterinaria Móvil</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contacto Útil</h4>
+        <ul>
+          <li>📞 Tel: 147 (Atención Ciudadana)</li>
+          <li>📍 Av. 9 de Julio 500, Mendoza</li>
+          <li>📧 mascotas@ciudaddemendoza.gob.ar</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Municipalidad de la Ciudad de Mendoza. Todos los derechos reservados. 🦴🐾</p>
+    </div>
+  </footer>
+
+  <!-- Script de JavaScript Externo -->
+  <script src="script.js"></script>
+</body>
+</html>
