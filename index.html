@@ -59,7 +59,7 @@
   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-emerald-100 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
       <div class="flex items-center space-x-3.5">
-        <!-- Logo aún más grande -->
+        <!-- Logo más grande -->
         <img src="Logo mascotas ciudad.jpg" alt="Mascotas Capital Logo" class="w-20 sm:w-24 h-20 sm:h-24 object-contain">
         <div>
           <span class="text-xl font-bold font-heading text-slate-800 tracking-tight block">Mascotas Capital</span>
@@ -93,9 +93,9 @@
   </nav>
 
   <!-- ==================== HERO BANNER ==================== -->
-  <header class="relative overflow-hidden bg-gradient-to-b from-brand-50/70 to-transparent py-16 lg:py-24">
-    <div class="absolute -top-10 -left-10 text-6xl opacity-20 pointer-events-none select-none text-brand-500"><i class="fa-solid fa-paw"></i></div>
-    <div class="absolute bottom-10 right-10 text-6xl opacity-20 pointer-events-none select-none text-brand-500"><i class="fa-solid fa-bone"></i></div>
+  <header class="relative overflow-hidden bg-gradient-to-b from-brand-50/80 to-[#f8fafc] py-16 lg:py-24 border-b border-emerald-100/60">
+    <div class="absolute -top-10 -left-10 text-6xl opacity-15 pointer-events-none select-none text-brand-500"><i class="fa-solid fa-paw"></i></div>
+    <div class="absolute bottom-10 right-10 text-6xl opacity-15 pointer-events-none select-none text-brand-500"><i class="fa-solid fa-bone"></i></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -140,10 +140,10 @@
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 py-12">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 py-8">
 
     <!-- ==================== 1. RED DE ADOPCIÓN RESPONSABLE ==================== -->
-    <section id="puntos-adopcion" class="space-y-10">
+    <section id="puntos-adopcion" class="space-y-10 py-12 px-6 sm:px-10 rounded-3xl bg-white border border-emerald-100/80 shadow-sm">
       <div class="text-center max-w-3xl mx-auto space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-emerald-100 px-3 py-1 rounded-full">
           <i class="fa-solid fa-location-dot"></i> Red Comunitaria y Proteccionistas
@@ -155,16 +155,16 @@
       <!-- Filtros Interactivos -->
       <div id="filterButtons" class="flex flex-wrap items-center justify-center gap-2">
         <button onclick="filtrarAdopciones('todos', this)" class="filter-btn active bg-brand-500 text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-md transition-all">Todos los Centros</button>
-        <button onclick="filtrarAdopciones('ong', this)" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Refugios & ONGs <i class="fa-solid fa-house ml-1 text-xs"></i></button>
-        <button onclick="filtrarAdopciones('rescatistas', this)" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Agrupaciones de Rescatistas <i class="fa-solid fa-paw ml-1 text-xs"></i></button>
-        <button onclick="filtrarAdopciones('plataforma', this)" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Plataformas Comunitarias <i class="fa-solid fa-laptop ml-1 text-xs"></i></button>
+        <button onclick="filtrarAdopciones('ong', this)" class="filter-btn bg-emerald-50/60 hover:bg-emerald-100 text-slate-700 border border-emerald-200/60 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Refugios & ONGs <i class="fa-solid fa-house ml-1 text-xs"></i></button>
+        <button onclick="filtrarAdopciones('rescatistas', this)" class="filter-btn bg-emerald-50/60 hover:bg-emerald-100 text-slate-700 border border-emerald-200/60 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Agrupaciones de Rescatistas <i class="fa-solid fa-paw ml-1 text-xs"></i></button>
+        <button onclick="filtrarAdopciones('plataforma', this)" class="filter-btn bg-emerald-50/60 hover:bg-emerald-100 text-slate-700 border border-emerald-200/60 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Plataformas Comunitarias <i class="fa-solid fa-laptop ml-1 text-xs"></i></button>
       </div>
 
       <!-- Grid de Refugios -->
       <div id="adoptionGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <!-- Tarjeta 1 -->
-        <article class="adoption-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col" data-category="rescatistas">
+        <article class="adoption-card bg-emerald-50/30 rounded-3xl overflow-hidden border border-emerald-100/60 shadow-sm hover:shadow-xl transition-all flex flex-col" data-category="rescatistas">
           <div class="relative h-48 bg-slate-100 overflow-hidden">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPW5NAlCkofulmI328cyGhuElxqjA-H20RDrQD71xd6h89tzPOB7XK0GE&s=10" alt="Estoy Aquí Mendoza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <span class="absolute top-3 right-3 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Rescatistas</span>
@@ -181,14 +181,14 @@
               </div>
               <p class="text-sm text-slate-600 pt-2">Asociación sin fines de lucro conformada por rescatistas y hogares de tránsito con más de 1.600 adopciones exitosas.</p>
             </div>
-            <a href="https://instagram.com" target="_blank" class="w-full bg-emerald-50 hover:bg-brand-500 text-brand-700 hover:text-white font-semibold py-2.5 rounded-xl text-sm transition-colors text-center block">
+            <a href="https://instagram.com" target="_blank" class="w-full bg-white hover:bg-brand-500 text-brand-700 hover:text-white font-semibold py-2.5 rounded-xl text-sm transition-colors text-center border border-emerald-200/60 block">
               Contactar en Instagram
             </a>
           </div>
         </article>
 
         <!-- Tarjeta 2 -->
-        <article class="adoption-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col" data-category="ong">
+        <article class="adoption-card bg-emerald-50/30 rounded-3xl overflow-hidden border border-emerald-100/60 shadow-sm hover:shadow-xl transition-all flex flex-col" data-category="ong">
           <div class="relative h-48 bg-slate-100 overflow-hidden">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7KMC1oyA0ZrP7auhVam3s67NnmDM5p5YHH9MUO4LMAjeE4B8ZEMnFAH4&s=10" alt="Refugio MOPROA" class="w-full h-full object-cover">
             <span class="absolute top-3 right-3 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Refugio Privado</span>
@@ -205,14 +205,14 @@
               </div>
               <p class="text-sm text-slate-600 pt-2">Movimiento Pro Protectora de Animales con más de 25 años albergando y recuperando perritos de la calle.</p>
             </div>
-            <button onclick="mostrarModalColaborar('Refugio MOPROA')" class="w-full bg-emerald-50 hover:bg-brand-500 text-brand-700 hover:text-white font-semibold py-2.5 rounded-xl text-sm transition-colors">
+            <button onclick="mostrarModalColaborar('Refugio MOPROA')" class="w-full bg-white hover:bg-brand-500 text-brand-700 hover:text-white font-semibold py-2.5 rounded-xl text-sm transition-colors border border-emerald-200/60">
               Ver Perritos y Colaborar
             </button>
           </div>
         </article>
 
         <!-- Tarjeta 3 -->
-        <article class="adoption-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col" data-category="plataforma">
+        <article class="adoption-card bg-emerald-50/30 rounded-3xl overflow-hidden border border-emerald-100/60 shadow-sm hover:shadow-xl transition-all flex flex-col" data-category="plataforma">
           <div class="relative h-48 bg-white overflow-hidden flex items-center justify-center p-4">
             <img src="https://alacucha.com/images/social-fallback.png" alt="Red A la Cucha" class="w-full h-full object-contain">
             <span class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Plataforma</span>
@@ -229,14 +229,14 @@
               </div>
               <p class="text-sm text-slate-600 pt-2">Plataforma web local que conecta refugios mendocinos con familias dispuestas a adoptar responsablemente.</p>
             </div>
-            <a href="https://alacucha.com" target="_blank" class="w-full bg-emerald-50 hover:bg-brand-500 text-brand-700 hover:text-white font-semibold py-2.5 rounded-xl text-sm transition-colors text-center block">
+            <a href="https://alacucha.com" target="_blank" class="w-full bg-white hover:bg-brand-500 text-brand-700 hover:text-white font-semibold py-2.5 rounded-xl text-sm transition-colors text-center border border-emerald-200/60 block">
               Buscar Mascotas en Red
             </a>
           </div>
         </article>
 
         <!-- Tarjeta 4 -->
-        <article class="adoption-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col" data-category="ong">
+        <article class="adoption-card bg-emerald-50/30 rounded-3xl overflow-hidden border border-emerald-100/60 shadow-sm hover:shadow-xl transition-all flex flex-col" data-category="ong">
           <div class="relative h-48 bg-white overflow-hidden flex items-center justify-center p-4">
             <img src="https://jaulasvacias.org/SJV-02.svg" alt="Santuario de Mascotas Jaulas Vacías" class="w-full h-full object-contain">
             <span class="absolute top-3 right-3 bg-cyan-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Jaulas Vacías</span>
@@ -253,7 +253,7 @@
               </div>
               <p class="text-sm text-slate-600 pt-2">Espacio dedicado al cuidado y adopción de perros gerontes rescatados que buscan un hogar cálido y tranquilo.</p>
             </div>
-            <button onclick="mostrarModalColaborar('Santuario Mascotas Senior')" class="w-full bg-emerald-50 hover:bg-brand-500 text-brand-700 hover:text-white font-semibold py-2.5 rounded-xl text-sm transition-colors">
+            <button onclick="mostrarModalColaborar('Santuario Mascotas Senior')" class="w-full bg-white hover:bg-brand-500 text-brand-700 hover:text-white font-semibold py-2.5 rounded-xl text-sm transition-colors border border-emerald-200/60">
               Adoptar un Viejito
             </button>
           </div>
@@ -263,10 +263,10 @@
     </section>
 
     <!-- ==================== 2. MASCOTAS PERDIDAS Y ENCONTRADAS ==================== -->
-    <section id="perdidos" class="bg-gradient-to-tr from-emerald-50/50 to-teal-50/30 p-8 sm:p-12 rounded-3xl border border-emerald-100 space-y-8">
+    <section id="perdidos" class="bg-gradient-to-tr from-emerald-50/60 to-teal-50/40 p-8 sm:p-12 rounded-3xl border border-emerald-200/80 shadow-sm space-y-8">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div class="space-y-2">
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-200/70 px-3 py-1 rounded-full">
             <i class="fa-solid fa-triangle-exclamation"></i> Tablón Comunitario
           </span>
           <h2 class="text-3xl font-extrabold text-slate-900">Mascotas Perdidas y Encontradas</h2>
@@ -280,7 +280,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
         <!-- Alerta 1 -->
-        <div class="bg-white p-6 rounded-2xl border border-emerald-200/60 shadow-sm space-y-3 relative overflow-hidden">
+        <div class="bg-white p-6 rounded-2xl border border-emerald-200/80 shadow-sm space-y-3 relative overflow-hidden">
           <div class="absolute top-0 right-0 bg-amber-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Buscado <i class="fa-solid fa-magnifying-glass ml-1"></i></div>
           <h3 class="text-lg font-bold text-slate-800 pt-1">"Toby" - Caniche Blanco</h3>
           <p class="text-xs text-slate-500 flex items-center gap-1">
@@ -294,7 +294,7 @@
         </div>
 
         <!-- Alerta 2 -->
-        <div class="bg-white p-6 rounded-2xl border border-emerald-200/60 shadow-sm space-y-3 relative overflow-hidden">
+        <div class="bg-white p-6 rounded-2xl border border-emerald-200/80 shadow-sm space-y-3 relative overflow-hidden">
           <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Encontrado <i class="fa-solid fa-house ml-1"></i></div>
           <h3 class="text-lg font-bold text-slate-800 pt-1">Gato Mestizo Atigrado</h3>
           <p class="text-xs text-slate-500 flex items-center gap-1">
@@ -308,7 +308,7 @@
         </div>
 
         <!-- Alerta 3 -->
-        <div class="bg-white p-6 rounded-2xl border border-emerald-200/60 shadow-sm space-y-3 relative overflow-hidden">
+        <div class="bg-white p-6 rounded-2xl border border-emerald-200/80 shadow-sm space-y-3 relative overflow-hidden">
           <div class="absolute top-0 right-0 bg-amber-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Buscado <i class="fa-solid fa-magnifying-glass ml-1"></i></div>
           <h3 class="text-lg font-bold text-slate-800 pt-1">"Luna" - Labradora Dorada</h3>
           <p class="text-xs text-slate-500 flex items-center gap-1">
@@ -325,7 +325,7 @@
     </section>
 
     <!-- ==================== 3. VETERINARIA MÓVIL Y TURNOS ==================== -->
-    <section id="veterinaria" class="space-y-10">
+    <section id="veterinaria" class="space-y-10 py-12 px-6 sm:px-10 rounded-3xl bg-white border border-emerald-100/80 shadow-sm">
       <div class="text-center max-w-3xl mx-auto space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">
           <i class="fa-solid fa-stethoscope"></i> Salud Animal
@@ -337,14 +337,14 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
         <!-- Próximos Puntos -->
-        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6 flex flex-col justify-between">
+        <div class="bg-emerald-50/30 p-8 rounded-3xl border border-emerald-100/60 shadow-sm space-y-6 flex flex-col justify-between">
           <div>
             <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-6">
               <i class="fa-solid fa-truck-medical text-brand-500"></i> Próximos Puntos de Atención
             </h3>
             
             <div class="space-y-4">
-              <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-emerald-100">
                 <div class="bg-brand-500 text-white rounded-xl p-3 text-center min-w-[65px] shadow-sm">
                   <span class="block text-xl font-extrabold leading-none">15</span>
                   <span class="text-[10px] uppercase font-bold tracking-wider">Nov</span>
@@ -352,11 +352,11 @@
                 <div>
                   <h4 class="font-bold text-slate-800 text-base">Gimnasio Municipal N° 1</h4>
                   <p class="text-xs text-slate-500 mt-1">Sobremonte 450, 5ta Sección • 08:30 a 12:30 hs</p>
-                  <span class="inline-block mt-2 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full">Cupos Disponibles</span>
+                  <span class="inline-block mt-2 text-[11px] font-semibold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full">Cupos Disponibles</span>
                 </div>
               </div>
 
-              <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-emerald-100">
                 <div class="bg-slate-800 text-white rounded-xl p-3 text-center min-w-[65px] shadow-sm">
                   <span class="block text-xl font-extrabold leading-none">22</span>
                   <span class="text-[10px] uppercase font-bold tracking-wider">Nov</span>
@@ -364,11 +364,11 @@
                 <div>
                   <h4 class="font-bold text-slate-800 text-base">Parque Central (RAMPA)</h4>
                   <p class="text-xs text-slate-500 mt-1">Av. Pellegrini y Las Heras • 09:00 a 13:00 hs</p>
-                  <span class="inline-block mt-2 text-[11px] font-semibold text-amber-600 bg-amber-50 px-2.5 py-0.5 rounded-full">Últimos Cupos</span>
+                  <span class="inline-block mt-2 text-[11px] font-semibold text-amber-700 bg-amber-100 px-2.5 py-0.5 rounded-full">Últimos Cupos</span>
                 </div>
               </div>
 
-              <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-emerald-100">
                 <div class="bg-slate-800 text-white rounded-xl p-3 text-center min-w-[65px] shadow-sm">
                   <span class="block text-xl font-extrabold leading-none">29</span>
                   <span class="text-[10px] uppercase font-bold tracking-wider">Nov</span>
@@ -376,20 +376,20 @@
                 <div>
                   <h4 class="font-bold text-slate-800 text-base">BARRIO San Martín</h4>
                   <p class="text-xs text-slate-500 mt-1">Centro de Salud N° 300 • 08:30 a 12:30 hs</p>
-                  <span class="inline-block mt-2 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full">Cupos Disponibles</span>
+                  <span class="inline-block mt-2 text-[11px] font-semibold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full">Cupos Disponibles</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="bg-emerald-50 p-4 rounded-2xl text-xs text-brand-700 flex items-center gap-3">
+          <div class="bg-white p-4 rounded-2xl text-xs text-brand-700 border border-emerald-100 flex items-center gap-3">
             <i class="fa-solid fa-circle-info text-lg"></i>
             <span>Recordá concurrir con correa, manta y ayuno de 8 horas en caso de castración programada.</span>
           </div>
         </div>
 
         <!-- Formulario de Reserva -->
-        <div class="bg-gradient-to-br from-emerald-50/50 to-teal-50/30 p-8 rounded-3xl border border-emerald-100 shadow-sm flex flex-col justify-between">
+        <div class="bg-emerald-50/40 p-8 rounded-3xl border border-emerald-100/80 shadow-sm flex flex-col justify-between">
           <div>
             <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
               <i class="fa-regular fa-calendar-check text-brand-500"></i> Reservar Turno Web
@@ -398,13 +398,13 @@
             <form id="turnoForm" onsubmit="solicitarTurnoMovil(event)" class="space-y-4">
               <div>
                 <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nombre del Vecino / Tutor</label>
-                <input type="text" id="nombreVecino" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Juan Pérez" required>
+                <input type="text" id="nombreVecino" class="w-full bg-white border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Juan Pérez" required>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Tipo de Servicio</label>
-                  <select id="tipoServicio" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors">
+                  <select id="tipoServicio" class="w-full bg-white border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors">
                     <option>Castración (Perros / Gatos)</option>
                     <option>Vacunación Antirrábica</option>
                     <option>Desparasitación General</option>
@@ -412,7 +412,7 @@
                 </div>
                 <div>
                   <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Punto de Atención</label>
-                  <select id="puntoAtencion" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors">
+                  <select id="puntoAtencion" class="w-full bg-white border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors">
                     <option>Gimnasio Municipal N° 1</option>
                     <option>Parque Central</option>
                     <option>Barrio San Martín</option>
@@ -430,8 +430,8 @@
       </div>
 
       <!-- Registro para Veterinarios Privados -->
-      <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/80 shadow-sm max-w-4xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-100">
+      <div class="bg-emerald-50/30 p-8 sm:p-10 rounded-3xl border border-emerald-100/80 shadow-sm max-w-4xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-emerald-100">
           <div>
             <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
               <i class="fa-solid fa-stethoscope text-brand-500"></i> ¿Sos Veterinario? Registrá tu Clínica
@@ -443,28 +443,28 @@
         <form id="vetRegisterForm" onsubmit="registrarVeterinaria(event)" class="space-y-4">
           <div>
             <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nombre de la Veterinaria / Clínica *</label>
-            <input type="text" id="vetClinicName" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Veterinaria Cuyo" required>
+            <input type="text" id="vetClinicName" class="w-full bg-white border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Veterinaria Cuyo" required>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nombre del Profesional *</label>
-              <input type="text" id="vetDocName" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Dr. Carlos Pérez" required>
+              <input type="text" id="vetDocName" class="w-full bg-white border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Dr. Carlos Pérez" required>
             </div>
             <div>
               <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">N° de Matrícula Provincial *</label>
-              <input type="text" id="vetMatricula" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. MP 1420" required>
+              <input type="text" id="vetMatricula" class="w-full bg-white border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. MP 1420" required>
             </div>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Dirección en la Ciudad *</label>
-              <input type="text" id="vetAddress" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Av. Arístides Villanueva 300" required>
+              <input type="text" id="vetAddress" class="w-full bg-white border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Av. Arístides Villanueva 300" required>
             </div>
             <div>
               <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Teléfono de Contacto / Urgencias *</label>
-              <input type="tel" id="vetPhone" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. 261 4001234" required>
+              <input type="tel" id="vetPhone" class="w-full bg-white border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. 261 4001234" required>
             </div>
           </div>
 
@@ -476,7 +476,7 @@
     </section>
 
     <!-- ==================== 4. REGISTRO Y DNI PET MUNICIPAL ==================== -->
-    <section id="dni-pet" class="space-y-10">
+    <section id="dni-pet" class="space-y-10 py-12 px-6 sm:px-10 rounded-3xl bg-gradient-to-br from-emerald-50/50 via-white to-teal-50/30 border border-emerald-200/80 shadow-sm">
       <div class="text-center max-w-3xl mx-auto space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-emerald-100 px-3 py-1 rounded-full">
           <i class="fa-solid fa-id-card"></i> Identificación Ciudadana
@@ -488,7 +488,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         <!-- Formulario de Registro -->
-        <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+        <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-emerald-200/80 shadow-sm space-y-6">
           <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
             <i class="fa-solid fa-id-card text-brand-500"></i> Formulario de Inscripción
           </h3>
@@ -497,11 +497,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nombre de la Mascota *</label>
-                <input type="text" id="petName" oninput="actualizarVistaPrevia()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Buki" required>
+                <input type="text" id="petName" oninput="actualizarVistaPrevia()" class="w-full bg-emerald-50/30 border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Buki" required>
               </div>
               <div>
                 <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Especie *</label>
-                <select id="petType" onchange="actualizarVistaPrevia()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors">
+                <select id="petType" onchange="actualizarVistaPrevia()" class="w-full bg-emerald-50/30 border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors">
                   <option value="Perro 🐕">Perro 🐕</option>
                   <option value="Gato 🐱">Gato 🐱</option>
                   <option value="Otro 🐾">Otro 🐾</option>
@@ -511,29 +511,29 @@
 
             <div>
               <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Foto de tu Mascota <i class="fa-solid fa-camera ml-1 text-slate-400"></i> *</label>
-              <input type="file" id="petPhotoFile" accept="image/*" onchange="actualizarFoto(event)" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-emerald-50 file:text-brand-700 hover:file:bg-emerald-100 cursor-pointer" required>
+              <input type="file" id="petPhotoFile" accept="image/*" onchange="actualizarFoto(event)" class="w-full bg-emerald-50/30 border border-emerald-200/80 rounded-xl px-4 py-2 text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-emerald-100 file:text-brand-800 hover:file:bg-emerald-200 cursor-pointer" required>
               <span class="text-[11px] text-slate-400 block mt-1">Sube una foto clara de frente (JPG o PNG).</span>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Raza / Pelaje</label>
-                <input type="text" id="petBreed" oninput="actualizarVistaPrevia()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Mestizo / Barbucho">
+                <input type="text" id="petBreed" oninput="actualizarVistaPrevia()" class="w-full bg-emerald-50/30 border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Mestizo / Barbucho">
               </div>
               <div>
                 <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Edad Aprox.</label>
-                <input type="text" id="petAge" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. 3 años">
+                <input type="text" id="petAge" class="w-full bg-emerald-50/30 border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. 3 años">
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nombre del Tutor/a *</label>
-                <input type="text" id="ownerName" oninput="actualizarVistaPrevia()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Mariana Gómez" required>
+                <input type="text" id="ownerName" oninput="actualizarVistaPrevia()" class="w-full bg-emerald-50/30 border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. Mariana Gómez" required>
               </div>
               <div>
                 <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Barrio / Sección en Mendoza *</label>
-                <select id="ownerZone" onchange="actualizarVistaPrevia()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors">
+                <select id="ownerZone" onchange="actualizarVistaPrevia()" class="w-full bg-emerald-50/30 border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors">
                   <option value="5ta Sección">5ta Sección</option>
                   <option value="4ta Sección">4ta Sección</option>
                   <option value="6ta Sección">6ta Sección</option>
@@ -547,7 +547,7 @@
 
             <div>
               <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Teléfono de Contacto (Emergencias) *</label>
-              <input type="tel" id="ownerPhone" oninput="actualizarVistaPrevia()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. 261 155123456" required>
+              <input type="tel" id="ownerPhone" oninput="actualizarVistaPrevia()" class="w-full bg-emerald-50/30 border border-emerald-200/80 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. 261 155123456" required>
             </div>
 
             <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-4 rounded-xl shadow-lg shadow-brand-500/25 transition-all text-center mt-4 flex items-center justify-center gap-2">
@@ -747,9 +747,9 @@
       const buttons = document.querySelectorAll('#filterButtons button');
       buttons.forEach(b => {
         b.classList.remove('bg-brand-500', 'text-white', 'shadow-md');
-        b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+        b.classList.add('bg-emerald-50/60', 'text-slate-700', 'border', 'border-emerald-200/60');
       });
-      btnElement.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+      btnElement.classList.remove('bg-emerald-50/60', 'text-slate-700', 'border', 'border-emerald-200/60');
       btnElement.classList.add('bg-brand-500', 'text-white', 'shadow-md');
 
       // Filtrar tarjetas
