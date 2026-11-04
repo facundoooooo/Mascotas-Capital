@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mascotas Capital | Municipalidad de Mendoza 🐾🦴</title>
+  <title>Mascotas Capital | Municipalidad de Mendoza</title>
   
   <!-- Tailwind CSS & Google Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -59,8 +59,8 @@
   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-orange-100 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <div class="w-12 h-12 bg-gradient-to-tr from-brand-500 to-orange-400 rounded-2xl flex items-center justify-center text-white text-2xl shadow-md shadow-brand-500/20">
-          🐾
+        <div class="w-12 h-12 bg-gradient-to-tr from-brand-500 to-orange-400 rounded-2xl flex items-center justify-center text-white text-xl shadow-md shadow-brand-500/20">
+          <i class="fa-solid fa-paw"></i>
         </div>
         <div>
           <span class="text-xl font-bold font-heading text-slate-800 tracking-tight block">Mascotas Capital</span>
@@ -70,11 +70,11 @@
 
       <!-- Desktop Links -->
       <div class="hidden md:flex items-center space-x-8 font-medium">
-        <a href="#puntos-adopcion" class="hover:text-brand-600 transition-colors">📍 Red de Adopción</a>
-        <a href="#perdidos" class="hover:text-brand-600 transition-colors">🔍 Perdidos & Encontrados</a>
-        <a href="#veterinaria" class="hover:text-brand-600 transition-colors">🚐 Turnos & Veterinarias</a>
-        <a href="#dni-pet" class="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
-          Registrar Mi Mascota 🦴
+        <a href="#puntos-adopcion" class="hover:text-brand-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-brand-500"></i> Red de Adopción</a>
+        <a href="#perdidos" class="hover:text-brand-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-magnifying-glass text-brand-500"></i> Perdidos & Encontrados</a>
+        <a href="#veterinaria" class="hover:text-brand-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-truck-medical text-brand-500"></i> Turnos & Veterinarias</a>
+        <a href="#dni-pet" class="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-brand-500/25 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+          Registrar Mi Mascota <i class="fa-solid fa-bone text-xs"></i>
         </a>
       </div>
 
@@ -86,17 +86,17 @@
 
     <!-- Mobile Dropdown -->
     <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3 font-medium">
-      <a href="#puntos-adopcion" class="block py-2 text-slate-700 hover:text-brand-600">📍 Red de Adopción</a>
-      <a href="#perdidos" class="block py-2 text-slate-700 hover:text-brand-600">🔍 Perdidos & Encontrados</a>
-      <a href="#veterinaria" class="block py-2 text-slate-700 hover:text-brand-600">🚐 Turnos & Veterinarias</a>
-      <a href="#dni-pet" class="block text-center bg-brand-500 text-white py-3 rounded-xl font-semibold shadow-md">Registrar Mi Mascota 🦴</a>
+      <a href="#puntos-adopcion" class="block py-2 text-slate-700 hover:text-brand-600"><i class="fa-solid fa-location-dot text-brand-500 mr-2"></i> Red de Adopción</a>
+      <a href="#perdidos" class="block py-2 text-slate-700 hover:text-brand-600"><i class="fa-solid fa-magnifying-glass text-brand-500 mr-2"></i> Perdidos & Encontrados</a>
+      <a href="#veterinaria" class="block py-2 text-slate-700 hover:text-brand-600"><i class="fa-solid fa-truck-medical text-brand-500 mr-2"></i> Turnos & Veterinarias</a>
+      <a href="#dni-pet" class="block text-center bg-brand-500 text-white py-3 rounded-xl font-semibold shadow-md">Registrar Mi Mascota <i class="fa-solid fa-bone ml-1"></i></a>
     </div>
   </nav>
 
   <!-- ==================== HERO BANNER ==================== -->
   <header class="relative overflow-hidden bg-gradient-to-b from-brand-50/70 to-transparent py-16 lg:py-24">
-    <div class="absolute -top-10 -left-10 text-6xl opacity-20 pointer-events-none select-none">🐾</div>
-    <div class="absolute bottom-10 right-10 text-6xl opacity-20 pointer-events-none select-none">🦴</div>
+    <div class="absolute -top-10 -left-10 text-6xl opacity-20 pointer-events-none select-none text-brand-500"><i class="fa-solid fa-paw"></i></div>
+    <div class="absolute bottom-10 right-10 text-6xl opacity-20 pointer-events-none select-none text-brand-500"><i class="fa-solid fa-bone"></i></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -111,11 +111,11 @@
             Encontrá tu nuevo compañero a través de refugios independientes, agrupaciones de rescatistas y ferias de adopción de todo Mendoza.
           </p>
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#puntos-adopcion" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg shadow-brand-500/25 transition-all text-center">
-              Dónde Adoptar 🏠
+            <a href="#puntos-adopcion" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg shadow-brand-500/25 transition-all text-center flex items-center justify-center gap-2">
+              Dónde Adoptar <i class="fa-solid fa-house text-sm"></i>
             </a>
-            <a href="#veterinaria" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold px-8 py-4 rounded-2xl transition-all text-center">
-              Turnos de Veterinaria 📅
+            <a href="#veterinaria" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold px-8 py-4 rounded-2xl transition-all text-center flex items-center justify-center gap-2">
+              Turnos de Veterinaria <i class="fa-regular fa-calendar text-sm"></i>
             </a>
           </div>
         </div>
@@ -125,8 +125,8 @@
             <div class="absolute -top-4 -right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
               ¡Nuevo!
             </div>
-            <div class="w-20 h-20 bg-brand-50 rounded-2xl mx-auto flex items-center justify-center text-4xl mb-4 text-brand-500 shadow-inner">
-              🐕
+            <div class="w-20 h-20 bg-brand-50 rounded-2xl mx-auto flex items-center justify-center text-3xl mb-4 text-brand-500 shadow-inner">
+              <i class="fa-solid fa-dog"></i>
             </div>
             <h3 class="text-xl font-bold text-slate-800">¡Sacá el DNI de tu Mascota!</h3>
             <p class="text-sm text-slate-600 mt-2">
@@ -147,7 +147,7 @@
     <section id="puntos-adopcion" class="space-y-10">
       <div class="text-center max-w-3xl mx-auto space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-100 px-3 py-1 rounded-full">
-          📍 Red Comunitaria y Proteccionistas
+          <i class="fa-solid fa-location-dot"></i> Red Comunitaria y Proteccionistas
         </span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Refugios y Agrupaciones de Adopción en Mendoza</h2>
         <p class="text-slate-600">Conocé a los refugios independientes, protectoras y agrupaciones que trabajan día a día rescatando y cuidando animales.</p>
@@ -156,9 +156,9 @@
       <!-- Filtros Interactivos -->
       <div id="filterButtons" class="flex flex-wrap items-center justify-center gap-2">
         <button onclick="filtrarAdopciones('todos', this)" class="filter-btn active bg-brand-500 text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-md transition-all">Todos los Centros</button>
-        <button onclick="filtrarAdopciones('ong', this)" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Refugios & ONGs 🏡</button>
-        <button onclick="filtrarAdopciones('rescatistas', this)" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Agrupaciones de Rescatistas 🐾</button>
-        <button onclick="filtrarAdopciones('plataforma', this)" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Plataformas Comunitarias 💻</button>
+        <button onclick="filtrarAdopciones('ong', this)" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Refugios & ONGs <i class="fa-solid fa-house ml-1 text-xs"></i></button>
+        <button onclick="filtrarAdopciones('rescatistas', this)" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Agrupaciones de Rescatistas <i class="fa-solid fa-paw ml-1 text-xs"></i></button>
+        <button onclick="filtrarAdopciones('plataforma', this)" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all">Plataformas Comunitarias <i class="fa-solid fa-laptop ml-1 text-xs"></i></button>
       </div>
 
       <!-- Grid de Refugios -->
@@ -177,8 +177,8 @@
                 <i class="fa-solid fa-location-dot text-brand-500"></i> Parque Central, Mendoza
               </p>
               <div class="text-xs text-slate-500 space-y-1 pt-1">
-                <p>🕒 Sábados: Jornadas presenciales</p>
-                <p>📱 IG: @estoyaquimendoza</p>
+                <p><i class="fa-regular fa-clock mr-1 text-slate-400"></i> Sábados: Jornadas presenciales</p>
+                <p><i class="fa-brands fa-instagram mr-1 text-brand-500"></i> IG: @estoyaquimendoza</p>
               </div>
               <p class="text-sm text-slate-600 pt-2">Asociación sin fines de lucro conformada por rescatistas y hogares de tránsito con más de 1.600 adopciones exitosas.</p>
             </div>
@@ -201,8 +201,8 @@
                 <i class="fa-solid fa-location-dot text-brand-500"></i> Gran Mendoza (Coordinación previa)
               </p>
               <div class="text-xs text-slate-500 space-y-1 pt-1">
-                <p>🕒 Atención con cita previa</p>
-                <p>📱 IG: @refugiomoproa</p>
+                <p><i class="fa-regular fa-clock mr-1 text-slate-400"></i> Atención con cita previa</p>
+                <p><i class="fa-brands fa-instagram mr-1 text-brand-500"></i> IG: @refugiomoproa</p>
               </div>
               <p class="text-sm text-slate-600 pt-2">Movimiento Pro Protectora de Animales con más de 25 años albergando y recuperando perritos de la calle.</p>
             </div>
@@ -212,7 +212,7 @@
           </div>
         </article>
 
-        <!-- Tarjeta 3 (Imagen actualizada con Red a la Cucha) -->
+        <!-- Tarjeta 3 -->
         <article class="adoption-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col" data-category="plataforma">
           <div class="relative h-48 bg-white overflow-hidden flex items-center justify-center p-4">
             <img src="https://alacucha.com/images/social-fallback.png" alt="Red A la Cucha" class="w-full h-full object-contain">
@@ -225,8 +225,8 @@
                 <i class="fa-solid fa-location-dot text-brand-500"></i> Red provincial online
               </p>
               <div class="text-xs text-slate-500 space-y-1 pt-1">
-                <p>🕒 Disponible 24/7</p>
-                <p>🌐 Conexión directa</p>
+                <p><i class="fa-regular fa-clock mr-1 text-slate-400"></i> Disponible 24/7</p>
+                <p><i class="fa-solid fa-globe mr-1 text-brand-500"></i> Conexión directa</p>
               </div>
               <p class="text-sm text-slate-600 pt-2">Plataforma web local que conecta refugios mendocinos con familias dispuestas a adoptar responsablemente.</p>
             </div>
@@ -236,7 +236,7 @@
           </div>
         </article>
 
-        <!-- Tarjeta 4 (Imagen actualizada con Santuario Jaulas Vacías) -->
+        <!-- Tarjeta 4 -->
         <article class="adoption-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all flex flex-col" data-category="ong">
           <div class="relative h-48 bg-white overflow-hidden flex items-center justify-center p-4">
             <img src="https://jaulasvacias.org/SJV-02.svg" alt="Santuario de Mascotas Jaulas Vacías" class="w-full h-full object-contain">
@@ -249,8 +249,8 @@
                 <i class="fa-solid fa-location-dot text-brand-500"></i> Gran Mendoza
               </p>
               <div class="text-xs text-slate-500 space-y-1 pt-1">
-                <p>🕒 Visitas coordinadas</p>
-                <p>❤️ Especialistas en adultos</p>
+                <p><i class="fa-regular fa-clock mr-1 text-slate-400"></i> Visitas coordinadas</p>
+                <p><i class="fa-solid fa-heart mr-1 text-rose-500"></i> Especialistas en adultos</p>
               </div>
               <p class="text-sm text-slate-600 pt-2">Espacio dedicado al cuidado y adopción de perros gerontes rescatados que buscan un hogar cálido y tranquilo.</p>
             </div>
@@ -268,7 +268,7 @@
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div class="space-y-2">
           <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-3 py-1 rounded-full">
-            🚨 Tablón Comunitario
+            <i class="fa-solid fa-triangle-exclamation"></i> Tablón Comunitario
           </span>
           <h2 class="text-3xl font-extrabold text-slate-900">Mascotas Perdidas y Encontradas</h2>
           <p class="text-slate-600">¿Perdiste a tu mascota o encontraste una en la Ciudad? Publicá un anuncio para que los vecinos te ayuden.</p>
@@ -282,7 +282,7 @@
         
         <!-- Alerta 1 -->
         <div class="bg-white p-6 rounded-2xl border border-amber-200/60 shadow-sm space-y-3 relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-rose-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Buscado 🔍</div>
+          <div class="absolute top-0 right-0 bg-rose-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Buscado <i class="fa-solid fa-magnifying-glass ml-1"></i></div>
           <h3 class="text-lg font-bold text-slate-800 pt-1">"Toby" - Caniche Blanco</h3>
           <p class="text-xs text-slate-500 flex items-center gap-1">
             <i class="fa-solid fa-map-pin text-rose-500"></i> 5ta Sección (Calle Emilio Civit)
@@ -296,7 +296,7 @@
 
         <!-- Alerta 2 -->
         <div class="bg-white p-6 rounded-2xl border border-emerald-200/60 shadow-sm space-y-3 relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-emerald-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Encontrado 🏠</div>
+          <div class="absolute top-0 right-0 bg-emerald-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Encontrado <i class="fa-solid fa-house ml-1"></i></div>
           <h3 class="text-lg font-bold text-slate-800 pt-1">Gato Mestizo Atigrado</h3>
           <p class="text-xs text-slate-500 flex items-center gap-1">
             <i class="fa-solid fa-map-pin text-emerald-500"></i> Plaza Independencia
@@ -310,7 +310,7 @@
 
         <!-- Alerta 3 -->
         <div class="bg-white p-6 rounded-2xl border border-amber-200/60 shadow-sm space-y-3 relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-rose-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Buscado 🔍</div>
+          <div class="absolute top-0 right-0 bg-rose-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Buscado <i class="fa-solid fa-magnifying-glass ml-1"></i></div>
           <h3 class="text-lg font-bold text-slate-800 pt-1">"Luna" - Labradora Dorada</h3>
           <p class="text-xs text-slate-500 flex items-center gap-1">
             <i class="fa-solid fa-map-pin text-rose-500"></i> 4ta Sección (Av. San Martín)
@@ -329,7 +329,7 @@
     <section id="veterinaria" class="space-y-10">
       <div class="text-center max-w-3xl mx-auto space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">
-          🩺 Salud Animal
+          <i class="fa-solid fa-stethoscope"></i> Salud Animal
         </span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Veterinaria Móvil & Turnos Online</h2>
         <p class="text-slate-600">Accedé a servicios de vacunación antirrábica, desparasitación y castración gratuita en los barrios de la Capital.</p>
@@ -422,7 +422,7 @@
               </div>
 
               <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-brand-500/20 transition-all flex items-center justify-center gap-2 mt-6">
-                <span>Confirmar Turno 🐾</span>
+                <span>Confirmar Turno <i class="fa-solid fa-paw ml-1"></i></span>
               </button>
             </form>
           </div>
@@ -469,8 +469,8 @@
             </div>
           </div>
 
-          <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3.5 rounded-xl transition-all shadow-md mt-4">
-            Inscribir mi Veterinaria en la Red 🏥
+          <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3.5 rounded-xl transition-all shadow-md mt-4 flex items-center justify-center gap-2">
+            Inscribir mi Veterinaria en la Red <i class="fa-solid fa-hospital"></i>
           </button>
         </form>
       </div>
@@ -480,7 +480,7 @@
     <section id="dni-pet" class="space-y-10">
       <div class="text-center max-w-3xl mx-auto space-y-3">
         <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-100 px-3 py-1 rounded-full">
-          🆔 Identificación Ciudadana
+          <i class="fa-solid fa-id-card"></i> Identificación Ciudadana
         </span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Registro Único & DNI Pet de la Ciudad</h2>
         <p class="text-slate-600">Inscribí a tu perro o gato en el Padrón Municipal para obtener su credencial digital con foto y código QR de identificación rápida.</p>
@@ -511,7 +511,7 @@
             </div>
 
             <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Foto de tu Mascota 📸 *</label>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Foto de tu Mascota <i class="fa-solid fa-camera ml-1 text-slate-400"></i> *</label>
               <input type="file" id="petPhotoFile" accept="image/*" onchange="actualizarFoto(event)" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-700 hover:file:bg-brand-100 cursor-pointer" required>
               <span class="text-[11px] text-slate-400 block mt-1">Sube una foto clara de frente (JPG o PNG).</span>
             </div>
@@ -551,8 +551,8 @@
               <input type="tel" id="ownerPhone" oninput="actualizarVistaPrevia()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 transition-colors" placeholder="Ej. 261 155123456" required>
             </div>
 
-            <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-4 rounded-xl shadow-lg shadow-brand-500/25 transition-all text-center mt-4">
-              Generar DNI Pet Digital 🦴
+            <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-4 rounded-xl shadow-lg shadow-brand-500/25 transition-all text-center mt-4 flex items-center justify-center gap-2">
+              Generar DNI Pet Digital <i class="fa-solid fa-bone"></i>
             </button>
           </form>
         </div>
@@ -565,7 +565,7 @@
 
           <!-- Tarjeta DNI -->
           <div id="dniCard" class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white rounded-3xl p-6 shadow-2xl border border-slate-700/60 relative overflow-hidden">
-            <div class="absolute -right-10 -bottom-10 text-9xl opacity-5 pointer-events-none select-none font-bold">🐾</div>
+            <div class="absolute -right-10 -bottom-10 text-9xl opacity-5 pointer-events-none select-none font-bold"><i class="fa-solid fa-paw"></i></div>
             
             <!-- Header Tarjeta -->
             <div class="flex justify-between items-center border-b border-slate-700/80 pb-4 mb-5">
@@ -573,8 +573,8 @@
                 <h4 class="font-bold font-heading text-sm text-brand-400 tracking-wide">Mendoza Capital</h4>
                 <p class="text-[11px] text-slate-400 font-medium">Registro Único de Mascotas</p>
               </div>
-              <div class="w-10 h-10 rounded-xl bg-brand-500/20 border border-brand-500/40 flex items-center justify-center text-lg">
-                🐾
+              <div class="w-10 h-10 rounded-xl bg-brand-500/20 border border-brand-500/40 flex items-center justify-center text-lg text-brand-400">
+                <i class="fa-solid fa-paw"></i>
               </div>
             </div>
 
@@ -582,7 +582,7 @@
             <div class="flex gap-5 items-center mb-6">
               <div id="dniPhotoContainer" class="w-24 h-28 rounded-2xl bg-slate-700/80 border-2 border-brand-500/50 overflow-hidden flex items-center justify-center relative shrink-0 shadow-inner">
                 <img id="cardPetImg" src="" alt="Foto Mascota" class="w-full h-full object-cover hidden">
-                <span id="cardDefaultEmoji" class="text-3xl">🐕</span>
+                <span id="cardDefaultEmoji" class="text-3xl text-slate-400"><i class="fa-solid fa-dog"></i></span>
               </div>
               
               <div class="space-y-1.5 text-xs flex-1 min-w-0">
@@ -637,7 +637,7 @@
         <div class="space-y-4">
           <div class="flex items-center space-x-3">
             <div class="w-10 h-10 bg-brand-500 rounded-xl flex items-center justify-center text-white text-xl">
-              🐾
+              <i class="fa-solid fa-paw"></i>
             </div>
             <span class="text-xl font-bold font-heading text-white">Mascotas Capital</span>
           </div>
@@ -666,7 +666,7 @@
       </div>
 
       <div class="border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
-        <p>&copy; 2026 Municipalidad de la Ciudad de Mendoza. Todos los derechos reservados. 🦴🐾</p>
+        <p>&copy; 2026 Municipalidad de la Ciudad de Mendoza. Todos los derechos reservados. <i class="fa-solid fa-bone text-brand-500 mx-1"></i> <i class="fa-solid fa-paw text-brand-500"></i></p>
       </div>
     </div>
   </footer>
